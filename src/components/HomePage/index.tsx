@@ -94,7 +94,7 @@ function HomePage({user}: HomePageProps) {
         </div>
       </div>
       <div style={{ padding: '1%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
-        <div style={{ flexBasis: '30%', marginRight: '3%', marginLeft: '2%' }}>
+        {/* <div style={{ flexBasis: '30%', marginRight: '3%', marginLeft: '2%' }}>
           <MainButton
             title="Governance"
             description="Vote on upgrades."
@@ -103,9 +103,9 @@ function HomePage({user}: HomePageProps) {
               history.push('/governance/');
             }}
           />
-        </div>
+        </div> */}
 
-        <div style={{ flexBasis: '30%' }}>
+        <div style={{ flexBasis: '30%', marginLeft: '18%' }}>
           <MainButton
             title="Trade"
             description="Trade døllar tokens."

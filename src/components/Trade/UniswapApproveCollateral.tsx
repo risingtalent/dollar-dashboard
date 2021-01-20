@@ -34,13 +34,13 @@ function UniswapApproveCollateral({
             disabled={user === '' || userAllowanceESD.comparedTo(MAX_UINT256) === 0}
           />
         </div>
-        {/* Approve Uniswap Router to spend USDC */}
+        {/* Approve Uniswap Router to spend DAI */}
         <div style={{width: '6%'}} />
         <div style={{width: '27%', paddingTop: '2%'}}>
           <Button
             wide
             icon={<IconCirclePlus />}
-            label="Unlock USDC"
+            label="Unlock DAI"
             onClick={() => {
               approve(USDC.addr, UniswapV2Router02);
             }}

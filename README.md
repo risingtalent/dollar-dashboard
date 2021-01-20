@@ -30,6 +30,25 @@ npm start
 - `0x88ff79eB2Bc5850F27315415da8685282C7610F9` **UniswapV2 USDC:ESD Pair**
 - `0xdF0Ae5504A48ab9f913F8490fBef1b9333A68e68` **LP Incentivation Pool**
 
+
+rinkeby test address
+Dao proxy
+0xefe603258B1D7d2869AEB3739623214106794d8E
+
+yen 
+0xfeB8c843e032aa9f4800Eb460423636c870f7F5f
+
+oracle
+0xeEaB2525a9792985558e276E55f223c414606842
+
+pool
+0x9c9D36923Fbc6bbaD92a8acd43903392d849D783
+
+uni v2
+0x5c4B33E699425A3d1986b789e8E7f33a16f68Dd8
+
+dai
+0x8c96CeeB1569bB9442f2AdbeEcF4774928E2b7A3
 ## disclaimer
 this project is an experiment, and its contracts are unaudited - we've put a significant amount of work into testing, as well as generally de-risking the design of its core mechanism, however participants should take great caution as bugs resulting in loss of funds are always a possibility.
 
@@ -50,4 +69,4 @@ limitations under the License.
 ```
 
 <br>
-made with 💔️ by the {ess}.
+made with 💔️ by DSY devs.

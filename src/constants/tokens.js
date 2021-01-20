@@ -6,7 +6,7 @@ export const UNI = {
 
 export const USDC = {
   addr: '0x8c96CeeB1569bB9442f2AdbeEcF4774928E2b7A3',
-  decimals: 6,
+  decimals: 18,
   symbol: 'DAI',
 };
 

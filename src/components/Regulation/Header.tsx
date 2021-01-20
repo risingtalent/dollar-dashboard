@@ -32,6 +32,7 @@ const RegulationHeader = ({
   legacyPoolRewarded, legacyPoolClaimable,
   totalDebt, totalCoupons, totalCouponsUnderlying, couponPremium
 }: RegulationHeaderProps) => {
+  console.log('totalSupply :>> ', totalStaged);
   const daoTotalSupply = totalBonded.plus(totalStaged).plus(totalRedeemable);
   const poolTotalSupply = poolLiquidity.plus(poolRewarded).plus(poolClaimable);
   const legacyPoolTotalSupply = legacyPoolRewarded.plus(legacyPoolClaimable);
