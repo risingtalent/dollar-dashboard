@@ -65,8 +65,8 @@ function RemoveLiquidity({
             </div>
             <div style={{ width: '35%', marginRight: '5%' }}>
               <>
-                <PriceSection label="You get " amt={estimatedUSDCReceived} symbol=" USDC" />
-                <PriceSection label="+ " amt={estimatedESDReceived} symbol=" ESD" />
+                <PriceSection label="You get " amt={estimatedUSDCReceived} symbol=" DAI" />
+                <PriceSection label="+ " amt={estimatedESDReceived} symbol=" DSY" />
               </>
             </div>
             <div style={{ width: '30%' }}>

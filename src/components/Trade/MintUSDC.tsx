@@ -26,7 +26,7 @@ function MintUSDC({
       <div style={{ display: 'flex' }}>
         {/* USDC balance */}
         <div style={{ width: '30%' }}>
-          <BalanceBlock asset="USDC Balance" balance={userBalanceUSDC} />
+          <BalanceBlock asset="DAI Balance" balance={userBalanceUSDC} />
         </div>
         {/* Mint */}
         <div style={{ width: '38%'}} />
@@ -34,7 +34,7 @@ function MintUSDC({
           <div style={{display: 'flex'}}>
             <div style={{width: '60%'}}>
               <BigNumberInput
-                adornment="USDC"
+                adornment="DAI"
                 value={mintAmount}
                 setter={setMintAmount}
               />

@@ -58,8 +58,11 @@ function TotalBalance({ user }: TotalBalanceProps) {
       const userPoolRewardedBalance = toTokenUnitsBN(new BigNumber(userPoolRewardedBalanceStr), ESDS.decimals);
       const userPoolClaimableBalance = toTokenUnitsBN(new BigNumber(userPoolClaimableBalanceStr), ESDS.decimals);
 
-      const UNItoESD = new BigNumber(pairBalanceESDStr).dividedBy(new BigNumber(pairTotalSupplyUNIStr));
-
+      let UNItoESD = new BigNumber(0);
+      if (!new BigNumber(pairTotalSupplyUNIStr).eq(0)) {
+        UNItoESD = new BigNumber(pairBalanceESDStr).dividedBy(new BigNumber(pairTotalSupplyUNIStr));
+      }
+      
       const daoTotalBalance = userStagedBalance.plus(userBondedBalance);
       const poolTotalBalance = UNItoESD.multipliedBy(userPoolStagedBalance.plus(userPoolBondedBalance))
         .plus(userPoolRewardedBalance.plus(userPoolClaimableBalance));

@@ -1,23 +1,23 @@
 export const UNI = {
-  addr: '0x88ff79eB2Bc5850F27315415da8685282C7610F9',
+  addr: '0x5c4B33E699425A3d1986b789e8E7f33a16f68Dd8',
   decimals: 18,
   symbol: 'UNI',
 };
 
 export const USDC = {
-  addr: '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+  addr: '0x8c96CeeB1569bB9442f2AdbeEcF4774928E2b7A3',
   decimals: 6,
-  symbol: 'USDC',
+  symbol: 'DAI',
 };
 
 export const ESD = {
-  addr: '0x36F3FD68E7325a35EB768F1AedaAe9EA0689d723',
+  addr: '0xfeB8c843e032aa9f4800Eb460423636c870f7F5f',
   decimals: 18,
-  symbol: 'ESD',
+  symbol: 'DSY',
 };
 
 export const ESDS = {
-  addr: '0x443D2f2755DB5942601fa062Cc248aAA153313D3',
+  addr: '0xefe603258B1D7d2869AEB3739623214106794d8E',
   decimals: 18,
-  symbol: 'ESDS',
+  symbol: 'DSYS',
 };

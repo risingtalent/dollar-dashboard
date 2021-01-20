@@ -86,7 +86,7 @@ function AddLiquidity({
       <div style={{ display: 'flex' }}>
         {/* Pool Status */}
         <div style={{ width: '30%' }}>
-          <BalanceBlock asset="USDC Balance" balance={userBalanceUSDC} />
+          <BalanceBlock asset="DAI Balance" balance={userBalanceUSDC} />
         </div>
         {/* Add liquidity to pool */}
         <div style={{ width: '70%', paddingTop: '2%' }}>
@@ -94,7 +94,7 @@ function AddLiquidity({
             <div style={{ width: '35%', marginRight: '5%' }}>
               <>
                 <BigNumberInput
-                  adornment="ESD"
+                  adornment=" DSY"
                   value={amountESD}
                   setter={onChangeAmountESD}
                 />
@@ -107,7 +107,7 @@ function AddLiquidity({
             </div>
             <div style={{ width: '35%', marginRight: '5%' }}>
               <BigNumberInput
-                adornment="USDC"
+                adornment="DAI"
                 value={amountUSDC}
                 setter={onChangeAmountUSDC}
               />

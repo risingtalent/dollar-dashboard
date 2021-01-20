@@ -75,7 +75,7 @@ function Migrate({
         <div style={{flexBasis: '32%', paddingTop: '2%'}}>
           <div style={{display: 'flex'}}>
             <div style={{width: '60%'}}>
-              <BalanceBlock asset="Claimable" balance={claimable} suffix={"ESD"} />
+              <BalanceBlock asset="Claimable" balance={claimable} suffix={" DSY"} />
               <Button
                 wide
                 icon={<IconArrowDown/>}
