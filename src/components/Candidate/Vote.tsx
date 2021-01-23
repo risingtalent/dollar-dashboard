@@ -28,7 +28,7 @@ function Vote({
       <div style={{display: 'flex'}}>
         {/* User stake */}
         <div style={{width: '20%'}}>
-          <BalanceBlock asset="My Stake" balance={stake} suffix={ " DSYS"}/>
+          <BalanceBlock asset="My Stake" balance={stake} suffix={ " DAYS"}/>
         </div>
         <div style={{width: '20%'}}>
           <TextBlock label="My Vote" text={VOTE_TYPE_MAP[vote]}/>

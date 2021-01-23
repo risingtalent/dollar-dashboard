@@ -26,13 +26,13 @@ const AccountPageHeader = ({
 }: AccountPageHeaderProps) => (
   <div style={{ padding: '2%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
     <div style={{ flexBasis: '20%' }}>
-      <BalanceBlock asset="Balance" balance={accountESDBalance} suffix={" DSY"}/>
+      <BalanceBlock asset="Balance" balance={accountESDBalance} suffix={" DAY"}/>
     </div>
     <div style={{ flexBasis: '20%' }}>
-      <BalanceBlock asset="Staged" balance={accountStagedBalance}  suffix={" DSY"}/>
+      <BalanceBlock asset="Staged" balance={accountStagedBalance}  suffix={" DAY"}/>
     </div>
     <div style={{ flexBasis: '20%' }}>
-      <BalanceBlock asset="Bonded" balance={accountBondedBalance} suffix={" DSY"} />
+      <BalanceBlock asset="Bonded" balance={accountBondedBalance} suffix={" DAY"} />
     </div>
     <div style={{ flexBasis: '20%' }}>
       <BalanceBlock asset="DAO Ownership" balance={ownership(accountESDSBalance, totalESDSSupply)}  suffix={"%"}/>

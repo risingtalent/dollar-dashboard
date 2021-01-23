@@ -22,12 +22,12 @@ function UniswapApproveCollateral({
     <Box heading="Unlock for Uniswap">
       <div style={{display: 'flex'}}>
         <div style={{width: '40%'}} />
-        {/* Approve Uniswap Router to spend ESD */}
+        {/* Approve Uniswap Router to spend DAY */}
         <div style={{width: '27%', paddingTop: '2%'}}>
           <Button
             wide
             icon={<IconCirclePlus />}
-            label="Unlock ESD"
+            label="Unlock DAY"
             onClick={() => {
               approve(ESD.addr, UniswapV2Router02);
             }}

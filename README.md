@@ -1,4 +1,4 @@
-DSY frontend dashboard
+DAY frontend dashboard
 
 ## rinkeby test address
 Dao proxy

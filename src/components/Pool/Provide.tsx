@@ -54,7 +54,7 @@ function Provide({
         <div style={{display: 'flex', flexWrap: 'wrap'}}>
           {/* total rewarded */}
           <div style={{flexBasis: '32%'}}>
-            <BalanceBlock asset="Rewarded" balance={rewarded} suffix={" DSY"} />
+            <BalanceBlock asset="Rewarded" balance={rewarded} suffix={" DAY"} />
           </div>
           <div style={{flexBasis: '33%'}}>
             <BalanceBlock asset="DAI Balance" balance={userUSDCBalance} suffix={"DAI"} />
@@ -66,7 +66,7 @@ function Provide({
               <div style={{width: '60%', minWidth: '6em'}}>
                 <>
                   <BigNumberInput
-                    adornment=" DSY"
+                    adornment=" DAY"
                     value={provideAmount}
                     setter={onChangeAmountESD}
                     disabled={status === 1}
@@ -101,7 +101,7 @@ function Provide({
         <div style={{display: 'flex', flexWrap: 'wrap'}}>
           {/* total rewarded */}
           <div style={{flexBasis: '32%'}}>
-            <BalanceBlock asset="Rewarded" balance={rewarded} suffix={" DSY"} />
+            <BalanceBlock asset="Rewarded" balance={rewarded} suffix={" DAY"} />
           </div>
           <div style={{flexBasis: '33%'}}>
             <BalanceBlock asset="DAI Balance" balance={userUSDCBalance} suffix={"DAI"} />

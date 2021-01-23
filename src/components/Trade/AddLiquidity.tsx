@@ -94,7 +94,7 @@ function AddLiquidity({
             <div style={{ width: '35%', marginRight: '5%' }}>
               <>
                 <BigNumberInput
-                  adornment=" DSY"
+                  adornment=" DAY"
                   value={amountESD}
                   setter={onChangeAmountESD}
                 />

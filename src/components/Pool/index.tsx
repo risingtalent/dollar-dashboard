@@ -170,7 +170,7 @@ function Pool({ user }: {user: string}) {
     <>
       <IconHeader icon={<i className="fas fa-parachute-box"/>} text="LP Reward Pool"/>
 
-      {hasLegacyBalance ?
+      {/* {hasLegacyBalance ?
         <>
           <Header primary={"Legacy Pool Migration"}/>
 
@@ -183,7 +183,7 @@ function Pool({ user }: {user: string}) {
             status={legacyUserStatus}
           />
         </>
-        : ''}
+        : ''} */}
 
       <PoolPageHeader
         accountUNIBalance={userUNIBalance}
