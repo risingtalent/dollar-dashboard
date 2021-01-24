@@ -59,7 +59,8 @@ function HomePage({user}: HomePageProps) {
   return (
     <>
 
-      <Background style={{  width:"100%", height:'100%'}}/>
+      <Background style={{  width:"100%", height:'100%', position: 'relative', backgroundColor: 'currentTheme.border'}}/>
+      
 
     <div style={{ position:'absolute', top: '130px', right: '15%', left: '15%', bottom: '-190px'}} >
       <div style={{ padding: '1%', display: 'flex', flexWrap: 'wrap', alignItems: 'center', width: '100%', maxWidth: '1020px', margin: '0 auto' }}>
