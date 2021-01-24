@@ -67,7 +67,7 @@ function App() {
       >
         <Main assetsUrl={`${process.env.PUBLIC_URL}/aragon-ui/`} theme={theme} layout={false} >
           <NavBar hasWeb3={hasWeb3} user={user} setUser={setUser} />
-          <div style={{ backgroundColor: '#000000', width: '100%', height: '100vh', position: 'absolute'}}></div>
+        
           <Layout >
           
           {

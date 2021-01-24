@@ -17,30 +17,28 @@ function Footer({updateTheme, theme, hasWeb3}: FooterProps) {
         borderTop: '1px solid ' + currentTheme.border,
         backgroundColor: currentTheme.surface,
         textAlign: 'center',
-        position: 'fixed',
-        left: '0',
-        bottom: '0',
+        position: 'absolute',
         height: 'auto',
         width: '100%',
         fontSize: '14px'
       }}>
-        <div style={{}}>
-          <div style={{ padding: '2% 6%', display: 'flex', justifyContent: 'space-between'}}>
-            <div style={{  textAlign: 'left' }}>
-              <FooterLink icon={<i className="fab fa-github"/>} href={"https://www.github.com/emptysetsquad/dollar"}/>
-              <FooterLink icon={<i className="fab fa-twitter"/>} href={"https://www.twitter.com/emptysetsquad"}/>
-              <FooterLink icon={<i className="fab fa-medium"/>} href={"https://www.medium.com/@emptysetsquad"}/>
-              <FooterLink icon={<i className="fab fa-telegram"/>} href={"https://www.t.me/emptysetdollar"}/>
-              <FooterLink icon={<i className="fab fa-discord"/>} href={"https://discord.gg/vPws9Vp"}/>
-            </div>
-            <div style={{ textAlign: 'right', height: '18px', marginTop: '15px', marginBottom: '15px', fontSize: '18px'}}>
-              made with <span role="img" aria-labelledby="heartbreak">💔️</span> by The Creator
-            </div>
-            <div style={{ width: '5%', textAlign: 'right', marginTop: '4px' }}>
-              <ChangeModeButton hasWeb3={hasWeb3} theme={theme} updateTheme={updateTheme} />
-            </div>
+       
+        <div style={{ padding: '2% 6%', display: 'flex', justifyContent: 'space-between'}}>
+          <div style={{  textAlign: 'left' }}>
+            <FooterLink icon={<i className="fab fa-github"/>} href={"https://www.github.com/emptysetsquad/dollar"}/>
+            <FooterLink icon={<i className="fab fa-twitter"/>} href={"https://www.twitter.com/emptysetsquad"}/>
+            <FooterLink icon={<i className="fab fa-medium"/>} href={"https://www.medium.com/@emptysetsquad"}/>
+            <FooterLink icon={<i className="fab fa-telegram"/>} href={"https://www.t.me/emptysetdollar"}/>
+            <FooterLink icon={<i className="fab fa-discord"/>} href={"https://discord.gg/vPws9Vp"}/>
+          </div>
+          <div style={{ textAlign: 'right', height: '18px', marginTop: '15px', marginBottom: '15px', fontSize: '18px'}}>
+            made with <span role="img" aria-labelledby="heartbreak">💔️</span> by The Creator
+          </div>
+          <div style={{ width: '5%', textAlign: 'right', marginTop: '4px' }}>
+            <ChangeModeButton hasWeb3={hasWeb3} theme={theme} updateTheme={updateTheme} />
           </div>
         </div>
+        
       </div>
     </>
   );
