@@ -65,9 +65,10 @@ function App() {
           }
         }}
       >
-        <Main assetsUrl={`${process.env.PUBLIC_URL}/aragon-ui/`} theme={theme} layout={false}>
+        <Main assetsUrl={`${process.env.PUBLIC_URL}/aragon-ui/`} theme={theme} layout={false} >
           <NavBar hasWeb3={hasWeb3} user={user} setUser={setUser} />
-          <Layout style={{ margin: '0px', width: '100%',}}>
+
+          <Layout >
           
           {
             hasWeb3 ?
@@ -89,7 +90,9 @@ function App() {
               
               :
               <Switch>
-                <Route path="/"><HomePageNoWeb3 /></Route>
+                {/* <Route path="/"><HomePageNoWeb3 /></Route> */}
+                <Route path="/"><HomePage user={user} /></Route>
+
               </Switch>
               
           }

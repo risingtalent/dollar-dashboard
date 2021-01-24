@@ -58,18 +58,19 @@ function HomePage({user}: HomePageProps) {
 
   return (
     <>
-    <Background style={{  width:"100%", height:'100%'}}/>
-    <div style={{ position:'absolute', top: '130px', right: '50px', left: '50px', bottom: '-190px'}} >
-      <div style={{ padding: '1%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
-        {/* <div style={{ flexBasis: '68%' }} /> */}
-        <div style={{ flexBasis: '30%', marginLeft: '2%', textAlign: 'left'}}>
-          <Box style={{ minHeight: '75px' }}>
+
+      <Background style={{  width:"100%", height:'100%'}}/>
+
+    <div style={{ position:'absolute', top: '130px', right: '15%', left: '15%', bottom: '-190px'}} >
+      <div style={{ padding: '1%', display: 'flex', flexWrap: 'wrap', alignItems: 'center', width: '100%', maxWidth: '1020px', margin: '0 auto' }}>
+
+        
+          <Box style={{ height:'75px', width: '318px', display: 'flex', alignItems: 'center'}}>
             <EpochBlock epoch={epochTime}/>
           </Box>
-        </div>
+      
       </div>
-      <div style={{ padding: '1%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
-        <div style={{ flexBasis: '30%', marginRight: '3%', marginLeft: '2%' }}>
+      <div style={{display: 'flex', flexWrap: 'wrap', width: '100%', maxWidth: '1020px', margin: '0 auto'}}>
           <MainButton
             title="DAO"
             description="Earn rewards for governing"
@@ -78,9 +79,9 @@ function HomePage({user}: HomePageProps) {
               history.push('/dao/');
             }}
           />
-        </div>
+     
 
-        <div style={{ flexBasis: '30%' }}>
+      
           <MainButton
             title="LP Rewards"
             description="Earn rewards for providing liquidity."
@@ -89,9 +90,9 @@ function HomePage({user}: HomePageProps) {
               history.push('/pool/');
             }}
           />
-        </div>
+       
 
-        <div style={{ flexBasis: '30%', marginLeft: '3%', marginRight: '2%' }}>
+        
           <MainButton
             title="Regulation"
             description="Network supply regulation statistics."
@@ -100,11 +101,11 @@ function HomePage({user}: HomePageProps) {
               history.push('/regulation/');
             }}
           />
-        </div>
-      </div>
+        
+     
 
-      <div style={{ padding: '1%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
-        <div style={{ flexBasis: '30%', marginRight: '3%', marginLeft: '2%'  }}>
+      
+        
         <MainButton
             title="Governance"
             description="Vote on upgrades."
@@ -113,9 +114,9 @@ function HomePage({user}: HomePageProps) {
               history.push('/governance/');
             }}
           />
-        </div>
+       
 
-        <div style={{ flexBasis: '30%' }}>
+       
         <MainButton
             title="Trade"
             description="Trade døllar tokens."
@@ -124,9 +125,9 @@ function HomePage({user}: HomePageProps) {
               history.push('/trade/');
             }}
           />
-        </div>
+        
 
-        <div style={{ flexBasis: '30%', marginLeft: '3%', marginRight: '2%' }}>
+        
         <MainButton
             title="Coupons"
             description="Purchase and redeem coupons."
@@ -135,7 +136,8 @@ function HomePage({user}: HomePageProps) {
               history.push('/coupons/');
             }}
           />
-        </div>
+        
+      
       </div>
   
     </div>   
@@ -155,8 +157,8 @@ function MainButton({
   title, description, icon, onClick, tag,
 }:MainButtonPropx) {
   return (
-    <LinkBase onClick={onClick} style={{ width: '100%' }}>
-      <Box style={{ minHeight: '250px',  display: 'flex', flexDirection:'column', alignItems: 'center', justifyContent: 'center' }} >
+    <LinkBase onClick={onClick} style={{ width: '338px', minHeight: '250px',  }}>
+      <Box style={{ minHeight: '250px', maxHeight: '250px' ,  display: 'flex', flexDirection:'column', alignItems: 'center', justifyContent: 'center', margin: '10px' }} >
         <span style={{ fontSize: 48 }}>
           {icon}
         </span>
