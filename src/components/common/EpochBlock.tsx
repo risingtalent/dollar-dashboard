@@ -7,8 +7,8 @@ type EpochBlockProps = {
 function EpochBlock({ epoch }: EpochBlockProps) {
   return (
     <>
-      <div style={{ fontSize: 16, padding: 3 }}>Epoch</div>
-      <div style={{ fontSize: 24, padding: 3, fontWeight: 400, lineHeight: 1.5, fontFamily: 'aragon-ui-monospace, monospace'}}>{epoch}</div>
+      <div style={{ fontSize: '12px', padding: 3, color: 'rgba(0,0,0,0.3)' }}>Epoch</div>
+      <div style={{ fontSize: '18px', padding: 3, fontWeight: 400, lineHeight: 1.5, fontFamily: 'aragon-ui-monospace, monospace'}}>{epoch}</div>
     </>
   );
 }

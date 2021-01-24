@@ -12,42 +12,46 @@ type NavbarProps = {
 
 function NavBar({ hasWeb3, user, setUser }: NavbarProps) {
   const currentTheme = useTheme();
-  const logoUrl = `./logo/logo_${currentTheme._name === 'light' ? 'black' : 'white'}.svg`;
+  const logoUrl = `./logo/YAI_LOGO_1.svg`;
 
   return (
-    <>
+    <div style={{ position: 'relative', top:'500' }}>
       <div
         style={{
           borderTop: '1px solid ' + currentTheme.border,
-          backgroundColor: 'none',
+          backgroundColor: 'currentTheme.border',
+          height: '90px', 
+          boxShadow: '0px 5px 20px 0px rgba(0,0,0,0.1)',
           textAlign: 'center',
-          height: '128px',
+          
           width: '100%',
           fontSize: '14px',
         }}
       >
-        <div style={{ maxWidth: '1100px', marginLeft: 'auto', marginRight: 'auto' }}>
+        
+        <div style={{ width: '85%', marginLeft: 'auto', marginRight: 'auto' }}>
           <div style={{ display: 'flex', paddingTop: '24px' }}>
-            <div style={{ width: '20%', textAlign: 'left' }}>
+            <div style={{ width: '10%', textAlign: 'left' }}>
               <NavLink to="/" component={LinkBase} style={{ marginRight: '16px', height: '40px' }}>
                 <img src={logoUrl} height="40px" alt="Empty Set Dollar" />
               </NavLink>
             </div>
-            <div style={{ width: '60%', textAlign: 'center' }}>
+            <div style={{ width: '45%', textAlign: 'center', color: 'currentTheme.border', fontWeight: 'normal', display: 'flex', justifyContent: 'space-around' }}>
               <LinkButton title="DAO" to="/dao/" />
               <LinkButton title="Liquidity" to="/pool/" />
               <LinkButton title="Regulation" to="/regulation/" />
-              {/* <LinkButton title="Governance" to="/governance/" /> */}
+              <LinkButton title="Governance" to="#" />
+              {/* <LinkButton title="Coupons" to="/coupons/" /> */}
               <LinkButton title="Trade" to="/trade/" />
-              <LinkButton title="Coupons" to="/coupons/" />
             </div>
-            <div style={{ width: '20%', textAlign: 'right' }}>
+            <div style={{ width: '55%', textAlign: 'right' }}>  
               <ConnectButton hasWeb3={hasWeb3} user={user} setUser={setUser} />
             </div>
           </div>
         </div>
-      </div>
-    </>
+        </div>
+  
+    </div>
   );
 }
 
@@ -65,14 +69,13 @@ function LinkButton({ title, to }: linkButtonProps) {
       style={{
         display: 'inline-flex',
         alignItems: 'center',
-        marginLeft: '8px',
-        marginRight: '8px',
+
         height: '40px',
-        opacity: 0.5,
+        opacity: 1,
       }}
       activeStyle={{ opacity: 1 }}
     >
-      <span style={{ display: 'block', padding: '1%', fontSize: '17px' }}>{title}</span>
+      <span style={{ display: 'block', padding: '1%', fontSize: '16px' }}>{title}</span>
     </NavLink>
   );
 }

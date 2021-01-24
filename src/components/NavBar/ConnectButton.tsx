@@ -36,7 +36,7 @@ function ConnectButton({ hasWeb3, user, setUser }: connectButtonProps) {
     <div style={{display: 'flex'}}>
       <div style={{flex: '1'}}/>
       <div>
-        <Box padding={4} style={{width: '192px'}}>
+        <Box padding={4} style={{width: '250px', border:'none', backgroundColor: 'currentTheme.border'}}>
           <div style={{display: 'flex'}}>
             <div>
               <LinkBase onClick={disconnectWeb3} style={{marginRight: '8px', height: '24px'}}>
@@ -46,10 +46,11 @@ function ConnectButton({ hasWeb3, user, setUser }: connectButtonProps) {
             <div style={{flex: '1', textAlign: 'right'}}>
               <IdentityBadge entity={user} />
             </div>
-          </div>
-          <div style={{display: 'flex'}}>
-            <div style={{flex: '1', textAlign: 'right'}}>
+            <div style={{display: 'flex'}}>
+            <div style={{ textAlign: 'right', border: '0.5px solid currentTheme.border', borderRadius: '6px'}}>
               <TotalBalance user={user} />
+             </div>
+          
             </div>
           </div>
         </Box>
@@ -58,7 +59,7 @@ function ConnectButton({ hasWeb3, user, setUser }: connectButtonProps) {
   ) : (
     <>
       <ConnectModal visible={isModalOpen} onClose={toggleModal} onConnect={connectWeb3}/>
-      <Button icon={<IconConnect />} label="Connect" onClick={toggleModal} disabled={!hasWeb3}/>
+      <Button icon='' label="Start" onClick={toggleModal} disabled={!hasWeb3} style={{backgroundColor: '#F40036', color: '#FFFFFF', borderRadius: '6px', fontSize: '14px', fontWeight: 'bold'}} />
     </>
   );
 }

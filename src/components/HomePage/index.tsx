@@ -4,6 +4,13 @@ import {
   Box, LinkBase, Tag,
 } from '@aragon/ui';
 import EpochBlock from "../common/EpochBlock";
+import Icon1 from '../../icons/icon1'
+import Icon2 from '../../icons/icon2'
+import Icon3 from '../../icons/icon3'
+import Icon4 from '../../icons/icon4'
+import Icon5 from '../../icons/icon5'
+import Icon6 from '../../icons/icon6'
+import Background from '../../icons/background'
 
 function epochformatted() {
   const epochStart = 1611100800;
@@ -51,20 +58,22 @@ function HomePage({user}: HomePageProps) {
 
   return (
     <>
+    <Background style={{  width:"100%", height:'100%'}}/>
+    <div style={{ position:'absolute', top: '130px', right: '50px', left: '50px', bottom: '-190px'}} >
       <div style={{ padding: '1%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
-        <div style={{ flexBasis: '68%' }} />
-        <div style={{ flexBasis: '30%', flexGrow: 1, marginRight: '2%', textAlign: 'right'}}>
-          <Box>
+        {/* <div style={{ flexBasis: '68%' }} /> */}
+        <div style={{ flexBasis: '30%', marginLeft: '2%', textAlign: 'left'}}>
+          <Box style={{ minHeight: '75px' }}>
             <EpochBlock epoch={epochTime}/>
           </Box>
         </div>
       </div>
       <div style={{ padding: '1%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
-        <div style={{ flexBasis: '30%', marginRight: '3%', marginLeft: '2%'  }}>
+        <div style={{ flexBasis: '30%', marginRight: '3%', marginLeft: '2%' }}>
           <MainButton
             title="DAO"
             description="Earn rewards for governing"
-            icon={<i className="fas fa-dot-circle"/>}
+            icon={<Icon1 />}
             onClick={() => {
               history.push('/dao/');
             }}
@@ -75,7 +84,7 @@ function HomePage({user}: HomePageProps) {
           <MainButton
             title="LP Rewards"
             description="Earn rewards for providing liquidity."
-            icon={<i className="fas fa-parachute-box"/>}
+            icon={<Icon2 />}
             onClick={() => {
               history.push('/pool/');
             }}
@@ -86,47 +95,50 @@ function HomePage({user}: HomePageProps) {
           <MainButton
             title="Regulation"
             description="Network supply regulation statistics."
-            icon={<i className="fas fa-chart-area"/>}
+            icon={<Icon3 />}
             onClick={() => {
               history.push('/regulation/');
             }}
           />
         </div>
       </div>
+
       <div style={{ padding: '1%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
-        {/* <div style={{ flexBasis: '30%', marginRight: '3%', marginLeft: '2%' }}>
-          <MainButton
+        <div style={{ flexBasis: '30%', marginRight: '3%', marginLeft: '2%'  }}>
+        <MainButton
             title="Governance"
             description="Vote on upgrades."
-            icon={<i className="fas fa-poll"/>}
+            icon={<Icon4 />}
             onClick={() => {
               history.push('/governance/');
             }}
           />
-        </div> */}
+        </div>
 
-        <div style={{ flexBasis: '30%', marginLeft: '18%' }}>
-          <MainButton
+        <div style={{ flexBasis: '30%' }}>
+        <MainButton
             title="Trade"
             description="Trade døllar tokens."
-            icon={<i className="fas fa-exchange-alt"/>}
+            icon={<Icon5 />}
             onClick={() => {
               history.push('/trade/');
             }}
           />
         </div>
 
-        <div style={{ flexBasis: '30%', marginLeft: '3%', marginRight: '2%'  }}>
-          <MainButton
+        <div style={{ flexBasis: '30%', marginLeft: '3%', marginRight: '2%' }}>
+        <MainButton
             title="Coupons"
             description="Purchase and redeem coupons."
-            icon={<i className="fas fa-ticket-alt"/>}
+            icon={<Icon6 />}
             onClick={() => {
               history.push('/coupons/');
             }}
           />
         </div>
       </div>
+  
+    </div>   
     </>
   );
 }
@@ -144,20 +156,20 @@ function MainButton({
 }:MainButtonPropx) {
   return (
     <LinkBase onClick={onClick} style={{ width: '100%' }}>
-      <Box>
-        <div style={{ padding: 10, fontSize: 18 }}>
-          {title}
-          {tag ? <Tag>{tag}</Tag> : <></>}
-        </div>
+      <Box style={{ minHeight: '250px',  display: 'flex', flexDirection:'column', alignItems: 'center', justifyContent: 'center' }} >
         <span style={{ fontSize: 48 }}>
           {icon}
         </span>
-        {/*<img alt="icon" style={{ padding: 10, height: 64 }} src={iconUrl} />*/}
-        <div style={{ paddingTop: 5, opacity: 0.5 }}>
+        <div style={{ padding: 10, fontSize: '24px', fontWeight: 'bold' }}>
+          {title}
+          {tag ? <Tag>{tag}</Tag> : <></>}
+        </div>
+
+        <p style={{ paddingTop: 5, opacity: 0.5, fontSize:'18px', whiteSpace: 'normal'}}>
           {' '}
           {description}
           {' '}
-        </div>
+        </p>
 
       </Box>
     </LinkBase>
