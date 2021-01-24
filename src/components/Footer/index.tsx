@@ -17,7 +17,9 @@ function Footer({updateTheme, theme, hasWeb3}: FooterProps) {
         borderTop: '1px solid ' + currentTheme.border,
         backgroundColor: currentTheme.surface,
         textAlign: 'center',
-        position: 'absolute',
+        position: 'fixed',
+        left: '0',
+        bottom: '0',
         height: 'auto',
         width: '100%',
         fontSize: '14px'
