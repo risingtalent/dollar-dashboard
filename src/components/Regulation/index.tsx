@@ -134,7 +134,7 @@ function Regulation({ user, theme }: {user: string, theme:string}) {
         user={user}
       />
       </div>
-      <div style={{height:'600px'}}></div>
+      <div style={{height:'450px'}}></div>
     </>
   );
 }

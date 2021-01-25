@@ -236,7 +236,7 @@ function Pool({ user, theme }: {user: string, theme: string}) {
         userUSDCAllowance={userUSDCAllowance}
       />
       </div>
-      <div style={{height:'600px'}}></div>
+      <div style={{height:'400px'}}></div>
     </>
   );
 }

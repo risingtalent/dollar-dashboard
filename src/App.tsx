@@ -98,7 +98,7 @@ function App() {
                 <Route path="/coupons/"><CouponMarket user={user}/></Route>
                 <Route path="/governance/candidate/:candidate"><Candidate user={user}/></Route>
                 <Route path="/governance/"><Governance theme={theme} user={user}/></Route>
-                <Route path="/trade/"><Trade user={user}/></Route>
+                <Route path="/trade/"><Trade theme={theme} user={user}/></Route>
                 <Route path="/regulation/"><Regulation theme={theme} user={user}/></Route>
                 <Route path="/pool/:override"><Pool theme={theme} user={user}/></Route>
                 <Route path="/pool/"><Pool theme={theme} user={user}/></Route>

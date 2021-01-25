@@ -158,6 +158,7 @@ function CouponMarket({ user }: {user: string}) {
         totalRedeemable={redeemable}
       />
       </div>
+      <div style={{height:'300px'}}></div>
     </>
   );
 }

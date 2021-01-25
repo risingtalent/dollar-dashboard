@@ -23,7 +23,7 @@
     "web3": "^1.2.6"
   },
   "scripts": {
-    "sync-assets": "",
+    "sync-assets": "copy-aragon-ui-assets ./public",
     "start": "npm run sync-assets && react-scripts start",
     "build": "npm run sync-assets && react-scripts build",
     "test": "react-scripts test",
