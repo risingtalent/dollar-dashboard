@@ -74,7 +74,7 @@ function HomePage({user, theme}: HomePageProps) {
  
       
 
-    <div style={{ position:'absolute', top: '130px', right: '15%', left: '15%',  width: '85%'}} >
+    <div style={{ position:'absolute', top: '130px', right: '15%', left: '15%',  width: '85%', overflow: 'hidden'}} >
       <div style={{ display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
       <div style={{ padding: '1%', display: 'flex', flexWrap: 'wrap', alignItems: 'center', width: '100%', maxWidth: '100%', margin: '0 auto' }}>
 
@@ -129,7 +129,7 @@ function HomePage({user, theme}: HomePageProps) {
             description="Vote on upgrades."
             icon={<Icon4 />}
             onClick={() => {
-              history.push('/governance/');
+              history.push('#');
             }}
           />
        

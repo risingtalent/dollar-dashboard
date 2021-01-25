@@ -10,7 +10,7 @@ import {ESD, UNI, USDC} from "../../constants/tokens";
 import IconHeader from "../common/IconHeader";
 
 
-function UniswapPool({ user }: {user: string}) {
+function UniswapPool({ user, theme}: {user: string, theme:string}) {
   const [pairBalanceESD, setPairBalanceESD] = useState(new BigNumber(0));
   const [pairBalanceUSDC, setPairBalanceUSDC] = useState(new BigNumber(0));
 
@@ -56,7 +56,7 @@ function UniswapPool({ user }: {user: string}) {
       <div style={{ padding: '1%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
         <div style={{ flexBasis: '30%', marginRight: '3%', marginLeft: '2%'  }}>
           <MainButton
-            
+            theme={theme}
             title="Info"
             description="View DAY-DAI pool stats."
             icon={<i className="fas fa-chart-area"/>}
@@ -66,6 +66,7 @@ function UniswapPool({ user }: {user: string}) {
 
         <div style={{ flexBasis: '30%' }}>
           <MainButton
+          theme={theme}
             title="Trade"
             description="Trade døllar tokens."
             icon={<i className="fas fa-exchange-alt"/>}
@@ -75,6 +76,7 @@ function UniswapPool({ user }: {user: string}) {
 
         <div style={{ flexBasis: '30%', marginLeft: '3%', marginRight: '2%' }}>
           <MainButton
+          theme={theme}
             title="Supply"
             description="Supply and redeem liquidity."
             icon={<i className="fas fa-water"/>}
@@ -92,7 +94,7 @@ type MainButtonProps = {
   description: string,
   icon: any,
   href:string,
-  theme:string
+  theme:string,
 }
 
 
