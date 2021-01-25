@@ -23,6 +23,7 @@ type RegulationHeaderProps = {
   totalCoupons: BigNumber,
   totalCouponsUnderlying: BigNumber,
   couponPremium: BigNumber,
+  theme: string
 };
 
 const RegulationHeader = ({
@@ -30,7 +31,7 @@ const RegulationHeader = ({
   totalBonded, totalStaged, totalRedeemable,
   poolLiquidity, poolRewarded, poolClaimable,
   legacyPoolRewarded, legacyPoolClaimable,
-  totalDebt, totalCoupons, totalCouponsUnderlying, couponPremium
+  totalDebt, totalCoupons, totalCouponsUnderlying, couponPremium, theme
 }: RegulationHeaderProps) => {
   console.log('totalSupply :>> ', totalStaged);
   const daoTotalSupply = totalBonded.plus(totalStaged).plus(totalRedeemable);
@@ -38,11 +39,17 @@ const RegulationHeader = ({
   const legacyPoolTotalSupply = legacyPoolRewarded.plus(legacyPoolClaimable);
   const circulatingSupply = totalSupply.minus(daoTotalSupply).minus(poolTotalSupply).minus(legacyPoolTotalSupply);
 
+  function templatestart(){
+    if (theme === 'light') return("#ffffff") ;
+
+    else return("#000000")  ;
+  }
+
   return (
     <>
       <div style={{display: 'flex', flexWrap: 'wrap'}}>
         <div style={{ flexBasis: '25%', marginRight: '2%' }}>
-          <Box heading="Supply Allocation">
+          <Box heading="Supply Allocation" style={{ backgroundColor:templatestart(), border:templatestart()}}>
             <Distribution
               heading={`∅${formatMoney(totalSupply.toNumber())}`}
               items={[
@@ -54,7 +61,7 @@ const RegulationHeader = ({
           </Box>
         </div>
         <div style={{ flexBasis: '25%', marginRight: '2%' }}>
-          <Box heading="DAO Breakdown">
+          <Box heading="DAO Breakdown" style={{ backgroundColor:templatestart(), border:templatestart()}}>
             <Distribution
               heading={`∅${formatMoney(daoTotalSupply.toNumber())}`}
               items={[
@@ -66,7 +73,7 @@ const RegulationHeader = ({
           </Box>
         </div>
         <div style={{ flexBasis: '25%' }}>
-          <Box heading="Uniswap Breakdown">
+          <Box heading="Uniswap Breakdown" style={{ backgroundColor:templatestart(),border:templatestart()}}>
             <Distribution
               heading={`∅${formatMoney(poolTotalSupply.toNumber())}`}
               items={[

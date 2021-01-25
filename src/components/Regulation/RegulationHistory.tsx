@@ -8,6 +8,7 @@ import BigNumber from "bignumber.js";
 
 type RegulationHistoryProps = {
   user: string,
+  theme
 };
 
 type Regulation = {
@@ -58,7 +59,7 @@ function renderEntry({ type, data }: Regulation): string[] {
 }
 
 function RegulationHistory({
-  user,
+  user, theme
 }: RegulationHistoryProps) {
   const [regulations, setRegulations] = useState<Regulation[]>([]);
   const [page, setPage] = useState(0)
@@ -89,8 +90,15 @@ function RegulationHistory({
     };
   }, [user]);
 
+  function templatestart(){
+    if (theme === 'light') return("#ffffff") ;
+
+    else return("#000000")  ;
+  }
+
   return (
     <DataView
+      style={{backgroundColor: templatestart(), broder: templatestart()}}
       fields={['Epoch', 'Price', 'Δ Redeemable', 'Δ Debt', 'Δ Bonded']}
       status={ initialized ? 'default' : 'loading' }
       entries={regulations}
