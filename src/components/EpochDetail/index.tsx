@@ -38,6 +38,7 @@ function EpochDetail({ user }: {user: string}) {
 
   return (
     <>
+     <div style={{ position:'absolute', top: '130px', right: '15%', left: '15%'}} >
       <IconHeader icon={<i className="fas fa-stream"/>} text="Epoch"/>
 
       <EpochPageHeader
@@ -52,6 +53,7 @@ function EpochDetail({ user }: {user: string}) {
         epoch={epoch}
         epochTime={epochTime}
       />
+      </div>
     </>
   );
 }

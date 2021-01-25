@@ -12,7 +12,8 @@ type ProposeCandidateProps = {
   user: string,
   stake: BigNumber,
   totalStake: BigNumber,
-  accountStatus: number
+  accountStatus: number,
+  theme:string
 };
 
 function plausibleCandidate(candidate: string): boolean {
@@ -20,12 +21,18 @@ function plausibleCandidate(candidate: string): boolean {
 }
 
 function ProposeCandidate({
-  user, stake, totalStake, accountStatus,
+  user, stake, totalStake, accountStatus, theme
 }: ProposeCandidateProps) {
   const [candidate, setCandidate] = useState("0x");
 
+  function templatestart(){
+    if (theme === 'light') return("#ffffff") ;
+
+    else return("#0C0C0C")  ;
+  }
+
   return (
-    <Box heading="Propose">
+    <Box heading="Propose" style={{ backgroundColor:templatestart(), border:templatestart()}}>
       <div style={{display: 'flex', flexWrap: 'wrap'}}>
         {/* User balance */}
         <div style={{flexBasis: '62%', paddingTop: '2%'}}>

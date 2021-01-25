@@ -10,15 +10,22 @@ type AdvanceEpochProps = {
   user: string,
   epoch: number,
   epochTime: number,
+  theme: string
 }
 
 function AdvanceEpoch({
+  theme,
   user,
   epoch,
   epochTime,
 }: AdvanceEpochProps) {
+  function templatestart(){
+    if (theme === 'light') return("#ffffff") ;
+
+    else return("#0C0C0C")  ;
+  }
   return (
-    <Box heading="Advance Epoch">
+    <Box heading="Advance Epoch" style={{backgroundColor: templatestart(), border: templatestart()}} >
       <div style={{ display: 'flex' }}>
         {/* Epoch Time */}
         <div style={{ width: '30%' }}>

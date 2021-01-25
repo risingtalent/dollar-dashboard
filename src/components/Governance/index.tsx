@@ -16,7 +16,7 @@ import CandidateHistory from "./CandidateHistory";
 import IconHeader from "../common/IconHeader";
 import {canPropose} from "../../utils/gov";
 
-function Governance({ user }: {user: string}) {
+function Governance({ user, theme }: {user: string, theme:string}) {
 
   const [stake, setStake] = useState(new BigNumber(0));
   const [totalStake, setTotalStake] = useState(new BigNumber(0));
@@ -93,6 +93,7 @@ function Governance({ user }: {user: string}) {
           <>
             <Header primary="Propose Candidate"/>
             <ProposeCandidate
+              theme={theme}
               user={user}
               stake={stake}
               totalStake={totalStake}
@@ -105,7 +106,7 @@ function Governance({ user }: {user: string}) {
 
       <Header primary="Candidate History" />
 
-      <CandidateHistory user={user}/>
+      <CandidateHistory theme={theme} user={user}/>
       </div>
     </>
   );

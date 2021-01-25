@@ -116,6 +116,7 @@ function CouponMarket({ user }: {user: string}) {
 
   return (
     <>
+    <div style={{ position:'absolute', top: '130px', right: '15%', left: '15%'}} >
       <ModalWarning/>
 
       <IconHeader icon={<i className="fas fa-ticket-alt"/>} text="Coupon Market"/>
@@ -156,6 +157,7 @@ function CouponMarket({ user }: {user: string}) {
         hideRedeemed={hideRedeemed}
         totalRedeemable={redeemable}
       />
+      </div>
     </>
   );
 }

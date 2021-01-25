@@ -42,7 +42,7 @@ const RegulationHeader = ({
   function templatestart(){
     if (theme === 'light') return("#ffffff") ;
 
-    else return("#000000")  ;
+    else return("#0C0C0C")  ;
   }
 
   return (
