@@ -10,7 +10,7 @@ import Icon3 from '../../icons/icon3'
 import Icon4 from '../../icons/icon4'
 import Icon5 from '../../icons/icon5'
 import Icon6 from '../../icons/icon6'
-import Background from '../../icons/background'
+import Background from '../../icons/background/index'
 
 function epochformatted() {
   const epochStart = 1611100800;
@@ -60,13 +60,17 @@ function HomePage({user, theme}: HomePageProps) {
   function templatestart(){
     if (theme === 'light') return("#ffffff") ;
 
-    else return("#000000")  ;
+    else return("#0C0C0C")  ;
   }
+
+
+
 
   return (
     <>
 
-      <Background style={{  width:"100%",  maxHeight:'458px', position: 'relative', top: '0', left: '0', right: '0'}}/>
+      <Background theme={theme} />
+      
  
       
 
@@ -176,7 +180,7 @@ function MainButton({
   function templatestart(){
     if (theme === 'light') return("#ffffff") ;
 
-    else return("#000000")  ;
+    else return("#0C0C0C")  ;
   }
 
   return (
