@@ -17,7 +17,7 @@ import {getLegacyPoolAddress, getPoolAddress} from "../../utils/pool";
 
 const ONE_COUPON = new BigNumber(10).pow(18);
 
-function Regulation({ user }: {user: string}) {
+function Regulation({ user, theme }: {user: string, theme:string}) {
 
   const [totalSupply, setTotalSupply] = useState(new BigNumber(0));
   const [totalBonded, setTotalBonded] = useState(new BigNumber(0));
@@ -103,9 +103,11 @@ function Regulation({ user }: {user: string}) {
 
   return (
     <>
+    <div style={{ position:'absolute', top: '130px', right: '15%', left: '15%'}} >
       <IconHeader icon={<i className="fas fa-chart-area"/>} text="Supply Regulation"/>
 
       <RegulationHeader
+        theme={theme}
         totalSupply={totalSupply}
 
         totalBonded={totalBonded}
@@ -128,8 +130,11 @@ function Regulation({ user }: {user: string}) {
       <Header primary="Regulation History" />
 
       <RegulationHistory
+      theme={theme}
         user={user}
       />
+      </div>
+      <div style={{height:'600px'}}></div>
     </>
   );
 }

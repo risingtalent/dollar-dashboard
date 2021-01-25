@@ -21,10 +21,11 @@ type ProvideProps = {
   userUSDCBalance: BigNumber,
   userUSDCAllowance: BigNumber,
   status: number,
+  theme: string
 };
 
 function Provide({
-  poolAddress, user, rewarded, pairBalanceESD, pairBalanceUSDC, userUSDCBalance, userUSDCAllowance, status
+  poolAddress, user, rewarded, pairBalanceESD, pairBalanceUSDC, userUSDCBalance, userUSDCAllowance, status, theme
 }: ProvideProps) {
   const [provideAmount, setProvideAmount] = useState(new BigNumber(0));
   const [usdcAmount, setUsdcAmount] = useState(new BigNumber(0));
@@ -47,9 +48,14 @@ function Provide({
       ESD.decimals);
     setUsdcAmount(newAmountUSDC);
   };
+  function templatestart(){
+    if (theme === 'light') return("#ffffff") ;
+
+    else return("#0C0C0C")  ;
+  }
 
   return (
-    <Box heading="Provide">
+    <Box heading="Provide" style={{ backgroundColor: templatestart(), border: templatestart()}}>
       {userUSDCAllowance.comparedTo(MAX_UINT256.dividedBy(2)) > 0 ?
         <div style={{display: 'flex', flexWrap: 'wrap'}}>
           {/* total rewarded */}

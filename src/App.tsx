@@ -17,6 +17,7 @@ import Candidate from "./components/Candidate";
 import Regulation from "./components/Regulation";
 import Pool from "./components/Pool";
 import HomePageNoWeb3 from "./components/HomePageNoWeb3";
+import Background from './icons/background/index'
 
 
 
@@ -77,26 +78,30 @@ function App() {
         }}
       >
         <div style={{backgroundColor: templatestart()}}>
-        <Main assetsUrl={`${process.env.PUBLIC_URL}/aragon-ui/`} theme={theme} layout={false}  >
-          <NavBar hasWeb3={hasWeb3} user={user} setUser={setUser} theme={theme} />
         
-          <Layout style={{width: '100%', height:'100%', overflow: 'hidden'}}>
+        <Main assetsUrl={`${process.env.PUBLIC_URL}/aragon-ui/`} theme={theme} layout={false}  >
+        
+          <NavBar hasWeb3={hasWeb3} user={user} setUser={setUser} theme={theme} />
+          <Background theme={theme} />
+        
+          <Layout style={{overflow: 'hidden'}}>
+
             
           
           {
             hasWeb3 ?
               <Switch >
-                <Route path="/dao/:override"><Wallet  user={user}/></Route>
-                <Route path="/dao/"><Wallet  user={user} /></Route>
-                <Route path="/epoch/"><EpochDetail user={user}/></Route>
+                <Route path="/dao/:override"><Wallet theme={theme} user={user}/></Route>
+                <Route path="/dao/"><Wallet theme={theme} user={user} /></Route>
+                <Route path="/epoch/"><EpochDetail theme={theme} user={user}/></Route>
                 <Route path="/coupons/:override"><CouponMarket user={user}/></Route>
                 <Route path="/coupons/"><CouponMarket user={user}/></Route>
                 <Route path="/governance/candidate/:candidate"><Candidate user={user}/></Route>
-                <Route path="/governance/"><Governance user={user}/></Route>
+                <Route path="/governance/"><Governance theme={theme} user={user}/></Route>
                 <Route path="/trade/"><Trade user={user}/></Route>
-                <Route path="/regulation/"><Regulation user={user}/></Route>
-                <Route path="/pool/:override"><Pool user={user}/></Route>
-                <Route path="/pool/"><Pool user={user}/></Route>
+                <Route path="/regulation/"><Regulation theme={theme} user={user}/></Route>
+                <Route path="/pool/:override"><Pool theme={theme} user={user}/></Route>
+                <Route path="/pool/"><Pool theme={theme} user={user}/></Route>
                 <Route path="/"><HomePage user={user} theme={theme} /></Route>
                 
               </Switch>

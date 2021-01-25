@@ -18,7 +18,8 @@ import {proposalStatus} from "../../utils/gov";
 import BigNumber from "bignumber.js";
 
 type CandidateHistoryProps = {
-  user: string;
+  user: string,
+  theme:string
 };
 
 type Proposal = {
@@ -60,7 +61,7 @@ async function formatProposals(epoch: number, proposals: any[]): Promise<Proposa
   return proposals
 }
 
-function CandidateHistory({user}: CandidateHistoryProps) {
+function CandidateHistory({user,theme}: CandidateHistoryProps) {
   const history = useHistory();
   const [proposals, setProposals] = useState<Proposal[]>([]);
   const [page, setPage] = useState(0)

@@ -8,7 +8,7 @@ import AdvanceEpoch from './AdvanceEpoch';
 import EpochPageHeader from "./Header";
 import IconHeader from "../common/IconHeader";
 
-function EpochDetail({ user }: {user: string}) {
+function EpochDetail({ user, theme }: {user: string, theme:string}) {
 
   const [epoch, setEpoch] = useState(0);
   const [epochTime, setEpochTime] = useState(0);
@@ -38,6 +38,7 @@ function EpochDetail({ user }: {user: string}) {
 
   return (
     <>
+     <div style={{ position:'absolute', top: '130px', right: '15%', left: '15%'}} >
       <IconHeader icon={<i className="fas fa-stream"/>} text="Epoch"/>
 
       <EpochPageHeader
@@ -48,10 +49,12 @@ function EpochDetail({ user }: {user: string}) {
       <Header primary="Advance Epoch" />
 
       <AdvanceEpoch
+      theme={theme}
         user={user}
         epoch={epoch}
         epochTime={epochTime}
       />
+      </div>
     </>
   );
 }

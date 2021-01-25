@@ -5,9 +5,11 @@ import {getAllRegulations} from '../../utils/infura';
 import {ESD, ESDS} from "../../constants/tokens";
 import {formatBN, toTokenUnitsBN} from "../../utils/number";
 import BigNumber from "bignumber.js";
+import './styles.css'
 
 type RegulationHistoryProps = {
   user: string,
+  theme:string
 };
 
 type Regulation = {
@@ -58,11 +60,12 @@ function renderEntry({ type, data }: Regulation): string[] {
 }
 
 function RegulationHistory({
-  user,
+  user, theme
 }: RegulationHistoryProps) {
   const [regulations, setRegulations] = useState<Regulation[]>([]);
   const [page, setPage] = useState(0)
   const [initialized, setInitialized] = useState(false)
+  var table = document.getElementsByClassName("cQcByh");
 
   //Update User balances
   useEffect(() => {
@@ -89,8 +92,15 @@ function RegulationHistory({
     };
   }, [user]);
 
+  function templatestart(){
+    if (theme === 'light') return("#ffffff") ;
+
+    else return("#0C0C0C")  ;
+  }
+
   return (
     <DataView
+      style={{}}
       fields={['Epoch', 'Price', 'Δ Redeemable', 'Δ Debt', 'Δ Bonded']}
       status={ initialized ? 'default' : 'loading' }
       entries={regulations}
@@ -101,5 +111,7 @@ function RegulationHistory({
     />
   );
 }
+
+
 
 export default RegulationHistory;

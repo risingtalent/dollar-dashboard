@@ -17,17 +17,24 @@ type WithdrawDepositProps = {
   balance: BigNumber,
   allowance: BigNumber,
   stagedBalance: BigNumber,
-  status: number
+  status: number,
+  theme:string
 };
 
 function WithdrawDeposit({
-  user, balance, allowance, stagedBalance, status
+  user, balance, allowance, stagedBalance, status, theme
 }: WithdrawDepositProps) {
   const [depositAmount, setDepositAmount] = useState(new BigNumber(0));
   const [withdrawAmount, setWithdrawAmount] = useState(new BigNumber(0));
 
+  function templatestart(){
+    if (theme === 'light') return("#ffffff") ;
+
+    else return("#0C0C0C")  ;
+  }
+
   return (
-    <Box heading="Stage">
+    <Box heading="Stage" style={{backgroundColor: templatestart(), border:templatestart()}}>
       {allowance.comparedTo(MAX_UINT256) === 0 ?
         <div style={{display: 'flex', flexWrap: 'wrap'}}>
           {/* total Issued */}

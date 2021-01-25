@@ -115,6 +115,7 @@ function Candidate({ user }: {user: string}) {
 
   return (
     <>
+     <div style={{ position:'absolute', top: '130px', right: '15%', left: '15%'}} >
       <IconHeader icon={<i className="fas fa-poll"/>} text="Candidate"/>
       <IdentityBadge entity={candidate} shorten={false} />
 
@@ -149,6 +150,7 @@ function Candidate({ user }: {user: string}) {
         initialized={initialized}
         approved={proposalStatus(epoch, startEpoch, periodEpoch, false, approveFor, rejectFor, totalStake) === "Approved"}
       />
+      </div>
     </>
   );
 }

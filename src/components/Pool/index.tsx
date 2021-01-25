@@ -28,7 +28,7 @@ import {DollarPool4} from "../../constants/contracts";
 
 
 
-function Pool({ user }: {user: string}) {
+function Pool({ user, theme }: {user: string, theme: string}) {
   const { override } = useParams();
   if (override) {
     user = override;
@@ -167,7 +167,9 @@ function Pool({ user }: {user: string}) {
   const isRewardedNegative = legacyUserRewardedBalance.isGreaterThan(new BigNumber("1000000000000000000"));
   const hasLegacyBalance = legacyUserStagedBalance.isGreaterThan(0) || legacyUserClaimableBalance.isGreaterThan(0) || legacyUserBondedBalance.isGreaterThan(0);
   return (
+    
     <>
+        <div style={{ position:'absolute', top: '130px', right: '15%', left: '15%'}} >
       <IconHeader icon={<i className="fas fa-parachute-box"/>} text="LP Reward Pool"/>
 
       {/* {hasLegacyBalance ?
@@ -186,6 +188,7 @@ function Pool({ user }: {user: string}) {
         : ''} */}
 
       <PoolPageHeader
+      theme={theme}
         accountUNIBalance={userUNIBalance}
         accountBondedBalance={userBondedBalance}
         accountRewardedESDBalance={userRewardedBalance}
@@ -196,6 +199,7 @@ function Pool({ user }: {user: string}) {
       />
 
       <WithdrawDeposit
+      theme={theme}
         poolAddress={poolAddress}
         user={user}
         balance={userUNIBalance}
@@ -205,6 +209,7 @@ function Pool({ user }: {user: string}) {
       />
 
       <BondUnbond
+      theme={theme}
         poolAddress={poolAddress}
         staged={userStagedBalance}
         bonded={userBondedBalance}
@@ -213,12 +218,14 @@ function Pool({ user }: {user: string}) {
       />
 
       <Claim
+      theme={theme}
         poolAddress={poolAddress}
         claimable={userClaimableBalance}
         status={userStatus}
       />
 
       <Provide
+      theme={theme}
         poolAddress={poolAddress}
         user={user}
         rewarded={isRewardedNegative ? new BigNumber(0) : userRewardedBalance}
@@ -228,6 +235,8 @@ function Pool({ user }: {user: string}) {
         userUSDCBalance={userUSDCBalance}
         userUSDCAllowance={userUSDCAllowance}
       />
+      </div>
+      <div style={{height:'600px'}}></div>
     </>
   );
 }

@@ -69,21 +69,22 @@ function HomePage({user, theme}: HomePageProps) {
   return (
     <>
 
-      <Background theme={theme} />
+      {/* <Background theme={theme} /> */}
       
  
       
 
-    <div style={{ position:'absolute', top: '130px', right: '15%', left: '15%'}} >
-      <div style={{ padding: '1%', display: 'flex', flexWrap: 'wrap', alignItems: 'center', width: '100%', maxWidth: '1020px', margin: '0 auto' }}>
+    <div style={{ position:'absolute', top: '130px', right: '15%', left: '15%',  width: '85%'}} >
+      <div style={{ display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
+      <div style={{ padding: '1%', display: 'flex', flexWrap: 'wrap', alignItems: 'center', width: '100%', maxWidth: '100%', margin: '0 auto' }}>
 
         
-          <Box style={{ height:'75px', width: '318px', display: 'flex', alignItems: 'center', backgroundColor: templatestart(), border: templatestart()}}>
+          <Box style={{ height:'75px', width: '25%', display: 'flex', alignItems: 'center', backgroundColor: templatestart(), border: templatestart()}}>
             <EpochBlock epoch={epochTime} theme={theme}/>
           </Box>
       
       </div>
-      <div style={{display: 'flex', flexWrap: 'wrap', width: '100%', maxWidth: '1020px', margin: '0 auto'}}>
+      <div style={{display: 'flex', flexWrap: 'wrap', width: '100%', height:'auto', maxWidth: '100%', margin: '0 auto'}}>
           <MainButton
           theme={theme}
             title="DAO"
@@ -158,7 +159,7 @@ function HomePage({user, theme}: HomePageProps) {
         
       
       </div>
-  
+      </div>
     </div>   
     </>
   );
@@ -184,8 +185,8 @@ function MainButton({
   }
 
   return (
-    <LinkBase onClick={onClick} style={{ width: '338px', minHeight: '250px',  }}>
-      <Box style={{ minHeight: '250px', maxHeight: '250px' ,  display: 'flex', flexDirection:'column', alignItems: 'center', justifyContent: 'center', margin: '10px', backgroundColor:templatestart(), border:templatestart() }} >
+    <LinkBase onClick={onClick} style={{ width: '26%', minHeight: '100%', height:'100%'  }}>
+      <Box style={{ minHeight: '250px' ,  display: 'flex', flexDirection:'column', alignItems: 'center', justifyContent: 'center', margin: '10px', backgroundColor:templatestart(), border:templatestart() }} >
         <span style={{ fontSize: 48 }}>
           {icon}
         </span>
