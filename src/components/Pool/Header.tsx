@@ -13,6 +13,7 @@ type PoolPageHeaderProps = {
   poolTotalBonded: BigNumber,
   accountPoolStatus: number,
   unlocked: number,
+  theme:string
 };
 
 const STATUS_MAP = ["Unlocked", "Locked"];
@@ -22,7 +23,7 @@ function status(accountStatus, unlocked) {
 }
 
 const PoolPageHeader = ({
-  accountUNIBalance, accountBondedBalance, accountRewardedESDBalance, accountClaimableESDBalance, poolTotalBonded, accountPoolStatus, unlocked
+  accountUNIBalance, accountBondedBalance, accountRewardedESDBalance, accountClaimableESDBalance, poolTotalBonded, accountPoolStatus, unlocked, theme
 }: PoolPageHeaderProps) => (
   <div style={{ padding: '2%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
     <div style={{ flexBasis: '20%' }}>

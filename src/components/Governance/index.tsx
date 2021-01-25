@@ -78,6 +78,7 @@ function Governance({ user }: {user: string}) {
 
   return (
     <>
+       <div style={{ position:'absolute', top: '130px', right: '15%', left: '15%'}} >
       <IconHeader icon={<i className="fas fa-poll"/>} text="Governance"/>
 
       <GovernanceHeader
@@ -105,6 +106,7 @@ function Governance({ user }: {user: string}) {
       <Header primary="Candidate History" />
 
       <CandidateHistory user={user}/>
+      </div>
     </>
   );
 }

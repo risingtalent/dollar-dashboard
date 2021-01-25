@@ -35,13 +35,15 @@ function Footer({updateTheme, theme, hasWeb3}: FooterProps) {
 
   return (
     <>
+
       <div
       style={{
         
         borderTop: '1px solid ' + borderColor(),
         backgroundColor: templatestart(),
         textAlign: 'center',
-        position: 'static',
+        position: 'fixed',
+        display:'block',
         left: '0',
         bottom: '0',
         height: 'auto',

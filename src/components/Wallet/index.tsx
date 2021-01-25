@@ -19,7 +19,7 @@ import IconHeader from "../common/IconHeader";
 import {getPoolAddress} from "../../utils/pool";
 // import {DollarPool4} from "../../constants/contracts";
 
-function Wallet({ user }: {user: string}) {
+function Wallet({ user, theme }: {user: string, theme:string}) {
   const { override } = useParams();
   if (override) {
     user = override;
@@ -98,8 +98,11 @@ function Wallet({ user }: {user: string}) {
     };
   }, [user]);
 
+
+
   return (
     <>
+    <div style={{ position:'absolute', top: '130px', right: '15%', left: '15%'}} >
       <IconHeader icon={<i className="fas fa-dot-circle"/>} text="DAO"/>
 
       <AccountPageHeader
@@ -113,6 +116,7 @@ function Wallet({ user }: {user: string}) {
       />
 
       <WithdrawDeposit
+      theme={theme}
         user={user}
         balance={userESDBalance}
         allowance={userESDAllowance}
@@ -121,11 +125,13 @@ function Wallet({ user }: {user: string}) {
       />
 
       <BondUnbond
+      theme={theme}
         staged={userStagedBalance}
         bonded={userBondedBalance}
         status={userStatus}
         lockup={lockup}
       />
+      </div>
     </>
   );
 }

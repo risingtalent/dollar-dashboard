@@ -22,7 +22,7 @@ function Background({ theme }: HomePageProps) {
 
    
     <svg
-      style={{  width:"100vw",  minHeight:'458px', position: 'relative'}}
+      style={{  width:"98.9vw",  minHeight:'458px', position: 'relative'}}
       viewBox="0 0 1152 459"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

@@ -17,16 +17,28 @@ type BondUnbondProps = {
   bonded: BigNumber,
   status: number,
   lockup: number,
+  theme: string,
 };
 
 function BondUnbond({
-  staged, bonded, status, lockup
+  staged, bonded, status, lockup,theme
 }: BondUnbondProps) {
   const [bondAmount, setBondAmount] = useState(new BigNumber(0));
   const [unbondAmount, setUnbondAmount] = useState(new BigNumber(0));
 
+  function templatestart(){
+    if (theme === 'light') return("#ffffff") ;
+
+    else return("#0C0C0C")  ;
+  }
+  function borderColor(){
+    if (theme === 'light') return("#ffffff") ;
+
+    else return("#0C0C0C")  ;
+  }
+
   return (
-    <Box heading="Bond">
+    <Box heading="Bond" style={{backgroundColor: templatestart(), border:templatestart()}}>
       <div style={{display: 'flex', flexWrap: 'wrap'}}>
         {/* Total bonded */}
         <div style={{flexBasis: '16%'}}>

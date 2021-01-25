@@ -103,6 +103,7 @@ function Regulation({ user }: {user: string}) {
 
   return (
     <>
+    <div style={{ position:'absolute', top: '130px', right: '15%', left: '15%'}} >
       <IconHeader icon={<i className="fas fa-chart-area"/>} text="Supply Regulation"/>
 
       <RegulationHeader
@@ -130,6 +131,7 @@ function Regulation({ user }: {user: string}) {
       <RegulationHistory
         user={user}
       />
+      </div>
     </>
   );
 }

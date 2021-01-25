@@ -14,16 +14,23 @@ import BigNumberInput from "../common/BigNumberInput";
 type ClaimProps = {
   poolAddress: string
   claimable: BigNumber,
-  status: number
+  status: number,
+  theme: string
 };
 
 function Claim({
-  poolAddress, claimable, status
+  poolAddress, claimable, status, theme
 }: ClaimProps) {
   const [claimAmount, setClaimAmount] = useState(new BigNumber(0));
 
+  function templatestart(){
+    if (theme === 'light') return("#ffffff") ;
+
+    else return("#0C0C0C")  ;
+  }
+
   return (
-    <Box heading="Claim">
+    <Box heading="Claim"  style={{ backgroundColor: templatestart(), border: templatestart()}}>
       <div style={{display: 'flex', flexWrap: 'wrap'}}>
         {/* total Issued */}
         <div style={{flexBasis: '32%'}}>

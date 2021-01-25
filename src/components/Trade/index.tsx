@@ -43,6 +43,7 @@ function UniswapPool({ user }: {user: string}) {
 
   return (
     <>
+    <div style={{ position:'absolute', top: '130px', right: '15%', left: '15%'}} >
       <IconHeader icon={<i className="fas fa-exchange-alt"/>} text="Trade"/>
 
       <TradePageHeader
@@ -78,6 +79,7 @@ function UniswapPool({ user }: {user: string}) {
             href={"https://uniswap.exchange/add/0x36f3fd68e7325a35eb768f1aedaae9ea0689d723/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"}
           />
         </div>
+      </div>
       </div>
     </>
   );
