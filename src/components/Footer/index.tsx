@@ -11,11 +11,24 @@ type FooterProps = {
 function Footer({updateTheme, theme, hasWeb3}: FooterProps) {
   const currentTheme = useTheme();
 
+  function templatestart(){
+    if (theme === 'light') return("#ffffff") ;
+
+    else return("#000000")  ;
+  }
+  function borderColor(){
+    if (theme === 'light') return("#F2F2F2") ;
+
+    else return("#151515")  ;
+  }
+
   return (
     <>
-      <div style={{
-        borderTop: '1px solid ' + currentTheme.border,
-        backgroundColor: currentTheme.surface,
+      <div
+      style={{
+        
+        borderTop: '1px solid ' + borderColor(),
+        backgroundColor: templatestart(),
         textAlign: 'center',
         position: 'fixed',
         left: '0',

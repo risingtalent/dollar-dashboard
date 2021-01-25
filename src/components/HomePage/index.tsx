@@ -30,10 +30,11 @@ function epochformatted() {
 }
 
 type HomePageProps = {
-  user: string
+  user: string,
+  theme: string
 };
 
-function HomePage({user}: HomePageProps) {
+function HomePage({user, theme}: HomePageProps) {
   const history = useHistory();
 
   const [epochTime, setEpochTime] = useState("0-00:00:00");
@@ -56,23 +57,31 @@ function HomePage({user}: HomePageProps) {
     };
   }, [user]);
 
+  function templatestart(){
+    if (theme === 'light') return("#ffffff") ;
+
+    else return("#000000")  ;
+  }
+
   return (
     <>
 
-      <Background style={{  width:"100%", height:'100%', position: 'relative', backgroundColor: 'currentTheme.border'}}/>
+      <Background style={{  width:"100%",  maxHeight:'458px', position: 'relative', top: '0', left: '0', right: '0'}}/>
+ 
       
 
     <div style={{ position:'absolute', top: '130px', right: '15%', left: '15%'}} >
       <div style={{ padding: '1%', display: 'flex', flexWrap: 'wrap', alignItems: 'center', width: '100%', maxWidth: '1020px', margin: '0 auto' }}>
 
         
-          <Box style={{ height:'75px', width: '318px', display: 'flex', alignItems: 'center'}}>
-            <EpochBlock epoch={epochTime}/>
+          <Box style={{ height:'75px', width: '318px', display: 'flex', alignItems: 'center', backgroundColor: templatestart(), border: templatestart()}}>
+            <EpochBlock epoch={epochTime} theme={theme}/>
           </Box>
       
       </div>
       <div style={{display: 'flex', flexWrap: 'wrap', width: '100%', maxWidth: '1020px', margin: '0 auto'}}>
           <MainButton
+          theme={theme}
             title="DAO"
             description="Earn rewards for governing"
             icon={<Icon1 />}
@@ -84,6 +93,7 @@ function HomePage({user}: HomePageProps) {
 
       
           <MainButton
+          theme={theme}
             title="LP Rewards"
             description="Earn rewards for providing liquidity."
             icon={<Icon2 />}
@@ -95,6 +105,7 @@ function HomePage({user}: HomePageProps) {
 
         
           <MainButton
+          theme={theme}
             title="Regulation"
             description="Network supply regulation statistics."
             icon={<Icon3 />}
@@ -108,6 +119,7 @@ function HomePage({user}: HomePageProps) {
       
         
         <MainButton
+        theme={theme}
             title="Governance"
             description="Vote on upgrades."
             icon={<Icon4 />}
@@ -119,6 +131,7 @@ function HomePage({user}: HomePageProps) {
 
        
         <MainButton
+        theme={theme}
             title="Trade"
             description="Trade døllar tokens."
             icon={<Icon5 />}
@@ -130,6 +143,7 @@ function HomePage({user}: HomePageProps) {
 
         
         <MainButton
+        theme={theme}
             title="Coupons"
             description="Purchase and redeem coupons."
             icon={<Icon6 />}
@@ -151,15 +165,23 @@ type MainButtonPropx = {
   description: string,
   icon: any,
   onClick: Function,
-  tag?:string
+  tag?:string,
+  theme:string
 }
 
 function MainButton({
-  title, description, icon, onClick, tag,
+  title, description, icon, onClick, tag, theme
 }:MainButtonPropx) {
+
+  function templatestart(){
+    if (theme === 'light') return("#ffffff") ;
+
+    else return("#000000")  ;
+  }
+
   return (
     <LinkBase onClick={onClick} style={{ width: '338px', minHeight: '250px',  }}>
-      <Box style={{ minHeight: '250px', maxHeight: '250px' ,  display: 'flex', flexDirection:'column', alignItems: 'center', justifyContent: 'center', margin: '10px' }} >
+      <Box style={{ minHeight: '250px', maxHeight: '250px' ,  display: 'flex', flexDirection:'column', alignItems: 'center', justifyContent: 'center', margin: '10px', backgroundColor:templatestart(), border:templatestart() }} >
         <span style={{ fontSize: 48 }}>
           {icon}
         </span>

@@ -8,18 +8,27 @@ type NavbarProps = {
   hasWeb3: boolean;
   user: string;
   setUser: Function;
+  theme: string,
 };
 
-function NavBar({ hasWeb3, user, setUser }: NavbarProps) {
+
+function NavBar({ hasWeb3, user, setUser, theme }: NavbarProps) {
   const currentTheme = useTheme();
   const logoUrl = `./logo/YAI_LOGO_1.svg`;
+
+
+
+  function templatestart() {
+    if (theme === 'light') return("#ffffff") ;
+    else return("#000000")  ;
+  }
 
   return (
     <div style={{ position: 'relative', top:'500' }}>
       <div
         style={{
           borderTop: '1px solid ' + currentTheme.border,
-          backgroundColor: 'currentTheme.border',
+          backgroundColor: templatestart(),
           height: '90px', 
           boxShadow: '0px 5px 20px 0px rgba(0,0,0,0.1)',
           textAlign: 'center',

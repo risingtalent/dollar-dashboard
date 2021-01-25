@@ -7,10 +7,11 @@ type switchThemeProps = {
   updateTheme: Function
 }
 
+
 function SwitchMode({ hasWeb3, theme, updateTheme }: switchThemeProps) {
   const handleChangeTheme = () => {
-    if (theme === 'light') updateTheme('dark');
-    else updateTheme('light');
+    if (theme === 'light') updateTheme('dark', document.body.style.backgroundColor = "#000000", document.body.style.color = "#ffffff") ;
+    else updateTheme('light', document.body.style.backgroundColor = "#ffffff", document.body.style.color = "#000000"  );
   };
 
   return (

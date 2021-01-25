@@ -52,6 +52,12 @@ function App() {
     };
   }, [user]);
 
+  function templatestart() {
+    if (theme === 'light') return("#ffffff") ;
+    else return("#000000")  ;
+  }
+
+ 
   return (
     <Router>
       <UseWalletProvider
@@ -65,8 +71,9 @@ function App() {
           }
         }}
       >
-        <Main assetsUrl={`${process.env.PUBLIC_URL}/aragon-ui/`} theme={theme} layout={false} >
-          <NavBar hasWeb3={hasWeb3} user={user} setUser={setUser} />
+        <div style={{backgroundColor: templatestart()}}>
+        <Main assetsUrl={`${process.env.PUBLIC_URL}/aragon-ui/`} theme={theme} layout={false}   >
+          <NavBar hasWeb3={hasWeb3} user={user} setUser={setUser} theme={theme} />
         
           <Layout >
           
@@ -84,7 +91,7 @@ function App() {
                 <Route path="/regulation/"><Regulation user={user}/></Route>
                 <Route path="/pool/:override"><Pool user={user}/></Route>
                 <Route path="/pool/"><Pool user={user}/></Route>
-                <Route path="/"><HomePage user={user} /></Route>
+                <Route path="/"><HomePage user={user} theme={theme} /></Route>
                 
               </Switch>
               
@@ -103,6 +110,7 @@ function App() {
           <div style={{height: '128px', width: '100%'}}/>
           <Footer hasWeb3={hasWeb3} theme={theme} updateTheme={updateTheme}/>
         </Main>
+        </div>
       </UseWalletProvider>
     </Router>
   );
