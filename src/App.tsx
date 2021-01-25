@@ -93,11 +93,11 @@ function App() {
               <Switch >
                 <Route path="/dao/:override"><Wallet theme={theme} user={user}/></Route>
                 <Route path="/dao/"><Wallet theme={theme} user={user} /></Route>
-                <Route path="/epoch/"><EpochDetail user={user}/></Route>
+                <Route path="/epoch/"><EpochDetail theme={theme} user={user}/></Route>
                 <Route path="/coupons/:override"><CouponMarket user={user}/></Route>
                 <Route path="/coupons/"><CouponMarket user={user}/></Route>
                 <Route path="/governance/candidate/:candidate"><Candidate user={user}/></Route>
-                <Route path="/governance/"><Governance user={user}/></Route>
+                <Route path="/governance/"><Governance theme={theme} user={user}/></Route>
                 <Route path="/trade/"><Trade user={user}/></Route>
                 <Route path="/regulation/"><Regulation theme={theme} user={user}/></Route>
                 <Route path="/pool/:override"><Pool theme={theme} user={user}/></Route>

@@ -8,7 +8,7 @@ import AdvanceEpoch from './AdvanceEpoch';
 import EpochPageHeader from "./Header";
 import IconHeader from "../common/IconHeader";
 
-function EpochDetail({ user }: {user: string}) {
+function EpochDetail({ user, theme }: {user: string, theme:string}) {
 
   const [epoch, setEpoch] = useState(0);
   const [epochTime, setEpochTime] = useState(0);
@@ -49,6 +49,7 @@ function EpochDetail({ user }: {user: string}) {
       <Header primary="Advance Epoch" />
 
       <AdvanceEpoch
+      theme={theme}
         user={user}
         epoch={epoch}
         epochTime={epochTime}
