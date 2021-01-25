@@ -7,6 +7,7 @@ function HomePageNoWeb3() {
 
   return (
     <>
+    <div style={{ position:'absolute', top: '130px', right: '15%', left: '15%'}} >
       <div style={{ padding: '1%', display: 'flex', alignItems: 'center' }}>
         <MainButton
           title="No web3 wallet detected"
@@ -17,6 +18,7 @@ function HomePageNoWeb3() {
             window.location = 'https://www.metamask.io/';
           }}
         />
+      </div>
       </div>
     </>
   );
