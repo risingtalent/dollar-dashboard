@@ -42,7 +42,7 @@ function Footer({updateTheme, theme, hasWeb3}: FooterProps) {
         borderTop: '1px solid ' + borderColor(),
         backgroundColor: templatestart(),
         textAlign: 'center',
-        position: 'fixed',
+        position: 'static',
         display:'block',
         left: '0',
         bottom: '0',
