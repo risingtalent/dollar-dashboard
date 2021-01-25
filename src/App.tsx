@@ -19,6 +19,8 @@ import Pool from "./components/Pool";
 import HomePageNoWeb3 from "./components/HomePageNoWeb3";
 
 
+
+
 function App() {
   const storedTheme = getPreference('theme', 'light');
 
@@ -57,6 +59,9 @@ function App() {
     else return("#000000")  ;
   }
 
+
+  
+
  
   return (
     <Router>
@@ -72,10 +77,11 @@ function App() {
         }}
       >
         <div style={{backgroundColor: templatestart()}}>
-        <Main assetsUrl={`${process.env.PUBLIC_URL}/aragon-ui/`} theme={theme} layout={false}   >
+        <Main assetsUrl={`${process.env.PUBLIC_URL}/aragon-ui/`} theme={theme} layout={false}  >
           <NavBar hasWeb3={hasWeb3} user={user} setUser={setUser} theme={theme} />
         
-          <Layout >
+          <Layout style={{width: '100%', height:'100%', overflow: 'hidden'}}>
+            
           
           {
             hasWeb3 ?
@@ -106,8 +112,7 @@ function App() {
 
           </Layout>
           
-          
-          <div style={{height: '128px', width: '100%'}}/>
+    
           <Footer hasWeb3={hasWeb3} theme={theme} updateTheme={updateTheme}/>
         </Main>
         </div>

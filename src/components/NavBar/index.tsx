@@ -14,7 +14,7 @@ type NavbarProps = {
 
 function NavBar({ hasWeb3, user, setUser, theme }: NavbarProps) {
   const currentTheme = useTheme();
-  const logoUrl = `./logo/YAI_LOGO_1.svg`;
+  const logoUrl = `./logo/Logo.svg`;
 
 
 

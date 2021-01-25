@@ -1,4 +1,7 @@
 import * as React from "react"
+import './styles.css'
+
+
 
 type HomePageProps = {
 
@@ -17,8 +20,9 @@ function Background({ theme }: HomePageProps) {
 
   return (
 
+   
     <svg
-      style={{  width:"100%",  maxHeight:'458px', position: 'relative', top: '0', left: '0', right: '0' }}
+      style={{  width:"100vw",  minHeight:'458px', position: 'relative'}}
       viewBox="0 0 1152 459"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

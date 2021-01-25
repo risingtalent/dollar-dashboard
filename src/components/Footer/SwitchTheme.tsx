@@ -1,5 +1,8 @@
 import React from 'react';
 import { Button, IconStarFilled, IconStar } from '@aragon/ui';
+import ButtonDark from './ButtonDark'
+import ButtonLight from './ButtonLight'
+
 
 type switchThemeProps = {
   hasWeb3: boolean,
@@ -16,7 +19,8 @@ function SwitchMode({ hasWeb3, theme, updateTheme }: switchThemeProps) {
 
   return (
     <Button
-      icon={theme === 'dark' ? <IconStar /> : <IconStarFilled />}
+    style={{  height:'30px'}}
+      icon={theme === 'dark' ? <ButtonDark /> : <ButtonLight />}
       onClick={handleChangeTheme}
       label=""
       disabled={!hasWeb3}
