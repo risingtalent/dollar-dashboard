@@ -20,7 +20,7 @@ function IconHeader({ icon, text, theme }: IconHeaderProps) {
   return (
     <>
       <div style={{ padding: '1%', display: 'flex', alignItems: 'center', backgroundColor:templatestart() }}>
-        <div style={{ marginRight: '2%', fontSize: 48 }}>
+        <div style={{ marginRight: '2%', fontSize: 48, display:'flex' }}>
           {icon}
         </div>
         <div>

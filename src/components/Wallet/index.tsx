@@ -20,6 +20,7 @@ import {getPoolAddress} from "../../utils/pool";
 // import {DollarPool4} from "../../constants/contracts";
 
 import Icon1 from '../../icons/icon1'
+import Logo from '../../icons/logo'
 
 function Wallet({ user, theme }: {user: string, theme:string}) {
   const { override } = useParams();
