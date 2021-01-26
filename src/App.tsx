@@ -108,8 +108,7 @@ function App() {
               
               :
               <Switch>
-                {/* <Route path="/"><HomePageNoWeb3 /></Route> */}
-                <Route path="/"><HomePage user={user} theme={theme} /></Route>
+                <Route path="/"><HomePageNoWeb3 /></Route>
                 
 
               </Switch>

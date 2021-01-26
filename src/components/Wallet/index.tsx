@@ -19,6 +19,8 @@ import IconHeader from "../common/IconHeader";
 import {getPoolAddress} from "../../utils/pool";
 // import {DollarPool4} from "../../constants/contracts";
 
+import Icon1 from '../../icons/icon1'
+
 function Wallet({ user, theme }: {user: string, theme:string}) {
   const { override } = useParams();
   if (override) {
@@ -103,7 +105,7 @@ function Wallet({ user, theme }: {user: string, theme:string}) {
   return (
     <>
     <div style={{ position:'absolute', top: '130px', right: '15%', left: '15%'}} >
-      <IconHeader icon={<i className="fas fa-dot-circle"/>} text="DAO"/>
+      <IconHeader theme={theme} icon={<Icon1 />} text="DAO"/>
 
       <AccountPageHeader
         accountESDBalance={userESDBalance}
