@@ -127,7 +127,7 @@ function Regulation({ user, theme }: {user: string, theme:string}) {
         couponPremium={couponPremium}
       />
 
-      <Header style={{margin: '24px 0', padding: '0'}}  primary="Regulation History" />
+      <Header style={{margin: '24px 24px', padding: '0'}}  primary="Regulation History" />
 
       <RegulationHistory
       theme={theme}
