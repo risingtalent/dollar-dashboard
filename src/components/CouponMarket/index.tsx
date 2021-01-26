@@ -22,7 +22,7 @@ import {CheckBox} from "../common";
 
 const ONE_COUPON = new BigNumber(10).pow(18);
 
-function CouponMarket({ user }: {user: string}) {
+function CouponMarket({ user, theme }: {user: string, theme:string}) {
   const { override } = useParams();
   if (override) {
     user = override;
@@ -119,7 +119,7 @@ function CouponMarket({ user }: {user: string}) {
     <div style={{ position:'absolute', top: '130px', right: '15%', left: '15%'}} >
       <ModalWarning/>
 
-      <IconHeader icon={<i className="fas fa-ticket-alt"/>} text="Coupon Market"/>
+      <IconHeader theme={theme} icon={<i className="fas fa-ticket-alt"/>} text="Coupon Market"/>
 
       <CouponMarketHeader
         debt={debt}

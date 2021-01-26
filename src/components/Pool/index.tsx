@@ -25,6 +25,7 @@ import IconHeader from "../common/IconHeader";
 import Migrate from "./Migrate";
 import {getLegacyPoolAddress, getPoolAddress} from "../../utils/pool";
 import {DollarPool4} from "../../constants/contracts";
+import Icon1 from '../../icons/icon1'
 
 
 
@@ -170,7 +171,7 @@ function Pool({ user, theme }: {user: string, theme: string}) {
     
     <>
         <div style={{ position:'absolute', top: '130px', right: '15%', left: '15%'}} >
-      <IconHeader icon={<i className="fas fa-parachute-box"/>} text="LP Reward Pool"/>
+      <IconHeader theme={theme} icon={<i className="fas fa-parachute-box"/>} text="LP Reward Pool"/>
 
       {/* {hasLegacyBalance ?
         <>

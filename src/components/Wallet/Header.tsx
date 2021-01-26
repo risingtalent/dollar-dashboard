@@ -13,6 +13,7 @@ type AccountPageHeaderProps = {
   accountBondedBalance: BigNumber,
   accountStatus: number,
   unlocked: number,
+  theme?: string
 };
 
 const STATUS_MAP = ["Unlocked", "Locked", "Locked"];
@@ -21,10 +22,18 @@ function status(accountStatus, unlocked) {
   return STATUS_MAP[accountStatus] + (accountStatus === 0 ? "" : " until " + unlocked)
 }
 
-const AccountPageHeader = ({
-  accountESDBalance, accountESDSBalance, totalESDSSupply, accountStagedBalance, accountBondedBalance, accountStatus, unlocked
-}: AccountPageHeaderProps) => (
-  <div style={{ padding: '2%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
+
+function AccountPageHeader ({
+  accountESDBalance, accountESDSBalance, totalESDSSupply, accountStagedBalance, accountBondedBalance, accountStatus, unlocked, theme
+}: AccountPageHeaderProps) {
+  
+  function templatestart(){
+    if (theme === 'light') return("#ffffff") ;
+
+    else return("#0C0C0C")  ;
+  }
+  return(
+  <div style={{ padding: '2%', display: 'flex', flexWrap: 'wrap', alignItems: 'center', backgroundColor:templatestart(), border:templatestart() }}>
     <div style={{ flexBasis: '20%' }}>
       <BalanceBlock asset="Balance" balance={accountESDBalance} suffix={" DAY"}/>
     </div>
@@ -41,7 +50,8 @@ const AccountPageHeader = ({
       <TextBlock label="Status" text={status(accountStatus, unlocked)}/>
     </div>
   </div>
-);
+  )
+}
 
 
 export default AccountPageHeader;

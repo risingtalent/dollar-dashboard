@@ -19,7 +19,7 @@ import Commit from "./Commit";
 import IconHeader from "../common/IconHeader";
 import {proposalStatus} from "../../utils/gov";
 
-function Candidate({ user }: {user: string}) {
+function Candidate({ user, theme }: {user: string, theme:string}) {
   const { candidate } = useParams();
 
   const [approveFor, setApproveFor] = useState(new BigNumber(0));
@@ -116,7 +116,7 @@ function Candidate({ user }: {user: string}) {
   return (
     <>
      <div style={{ position:'absolute', top: '130px', right: '15%', left: '15%'}} >
-      <IconHeader icon={<i className="fas fa-poll"/>} text="Candidate"/>
+      <IconHeader theme={theme} icon={<i className="fas fa-poll"/>} text="Candidate"/>
       <IdentityBadge entity={candidate} shorten={false} />
 
       <VoteHeader

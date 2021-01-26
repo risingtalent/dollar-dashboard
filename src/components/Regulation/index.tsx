@@ -104,7 +104,7 @@ function Regulation({ user, theme }: {user: string, theme:string}) {
   return (
     <>
     <div style={{ position:'absolute', top: '130px', right: '15%', left: '15%'}} >
-      <IconHeader icon={<i className="fas fa-chart-area"/>} text="Supply Regulation"/>
+      <IconHeader theme={theme} icon={<i className="fas fa-chart-area"/>} text="Supply Regulation"/>
 
       <RegulationHeader
         theme={theme}
