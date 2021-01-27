@@ -54,6 +54,7 @@ function BondUnbond({
             <div style={{width: '60%', minWidth: '6em'}}>
               <>
                 <BigNumberInput
+                  theme={theme}
                   adornment=" DAY"
                   value={bondAmount}
                   setter={setBondAmount}
@@ -67,8 +68,9 @@ function BondUnbond({
             </div>
             <div style={{width: '40%', minWidth: '7em'}}>
               <Button
+              style={{backgroundColor:templatestart(), color:'#F40036', border:'1px solid #F40036'}}
                 wide
-                icon={status === 0 ? <IconCirclePlus/> : <IconCaution/>}
+                icon={status === 0 ? <IconCirclePlus style={{color:'#F40036'}}/> : <IconCaution style={{color:'#F40036'}}/>}
                 label="Bond"
                 onClick={() => {
                   bond(
@@ -88,6 +90,7 @@ function BondUnbond({
             <div style={{width: '60%', minWidth: '6em'}}>
               <>
                 <BigNumberInput
+                  theme={theme}
                   adornment=" DAY"
                   value={unbondAmount}
                   setter={setUnbondAmount}
@@ -101,8 +104,9 @@ function BondUnbond({
             </div>
             <div style={{width: '40%', minWidth: '7em'}}>
               <Button
+                style={{backgroundColor:templatestart(), color:'#F40036', border:'1px solid #F40036'}}
                 wide
-                icon={status === 0 ? <IconCircleMinus/> : <IconCaution/>}
+                icon={status === 0 ? <IconCircleMinus style={{color:'#F40036'}}/> : <IconCaution style={{color:'#F40036'}}/>}
                 label="Unbond"
                 onClick={() => {
                   unbondUnderlying(

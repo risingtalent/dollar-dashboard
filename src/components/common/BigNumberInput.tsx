@@ -9,13 +9,21 @@ type BigNumberInputProps = {
   value: BigNumber,
   setter: (value: BigNumber) => void
   adornment?: any,
-  disabled?: boolean
+  disabled?: boolean,
+  theme?:string
 }
 
-function BigNumberInput({ value, setter, adornment, disabled=false }: BigNumberInputProps) {
+function BigNumberInput({ value, setter, adornment, disabled=false, theme }: BigNumberInputProps) {
+
+  function templatestart(){
+    if (theme === 'light') return("#ffffff") ;
+
+    else return("#0C0C0C")  ;
+  }
   return (
     <>
       <TextInput
+        style={{backgroundColor:templatestart(), border:'0.5px solid #4F4F4F', color:'#4F4F4F'}}
         type="number"
         adornmentPosition="end"
         adornment={adornment}

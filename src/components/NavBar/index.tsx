@@ -55,7 +55,7 @@ function NavBar({ hasWeb3, user, setUser, theme }: NavbarProps) {
               <LinkButton title="Coupons" to="/coupons/" />
             </div>
             <div style={{ width: '55%', textAlign: 'right' }}>  
-              <ConnectButton hasWeb3={hasWeb3} user={user} setUser={setUser} />
+              <ConnectButton theme={theme} hasWeb3={hasWeb3} user={user} setUser={setUser} />
             </div>
           </div>
         </div>

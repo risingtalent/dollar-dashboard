@@ -6,12 +6,20 @@ import TextBlock from "../common/TextBlock";
 type AccountPageHeaderProps = {
   epoch: number,
   epochTime: number,
+  theme:string
 };
 
-const EpochPageHeader = ({
-  epoch, epochTime,
-}: AccountPageHeaderProps) => (
-  <div style={{ padding: '2%', display: 'flex', alignItems: 'center' }}>
+function EpochPageHeader  ({
+  epoch, epochTime, theme
+}: AccountPageHeaderProps) {
+
+  function templatestart(){
+    if (theme === 'light') return("#ffffff") ;
+
+    else return("#0C0C0C")  ;
+  }
+return(
+  <div style={{ padding: '2%', display: 'flex', alignItems: 'center', backgroundColor:templatestart(), borderRadius:'6px' }}>
     <div style={{ width: '25%' }}>
       <NumberBlock title="Current" num={epoch} />
     </div>
@@ -22,7 +30,8 @@ const EpochPageHeader = ({
       <TextBlock label="Period" text={epoch < 106 ? "24 hours" : "8 hours"}/>
     </div>
   </div>
-);
+  )
+}
 
 
 export default EpochPageHeader;

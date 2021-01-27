@@ -47,6 +47,7 @@ function WithdrawDeposit({
               <div style={{width: '60%', minWidth: '6em'}}>
                 <>
                   <BigNumberInput
+                  theme={theme}
                     adornment=" DAY"
                     value={depositAmount}
                     setter={setDepositAmount}
@@ -82,6 +83,7 @@ function WithdrawDeposit({
               <div style={{width: '60%', minWidth: '7em'}}>
                 <>
                   <BigNumberInput
+                  theme={theme}
                     adornment=" DAY"
                     value={withdrawAmount}
                     setter={setWithdrawAmount}
@@ -96,6 +98,7 @@ function WithdrawDeposit({
               </div>
               <div style={{width: '40%', minWidth: '7em'}}>
                 <Button
+                  
                   wide
                   icon={status === 0 ? <IconCircleMinus/> : <IconLock/>}
                   label="Withdraw"
@@ -121,13 +124,16 @@ function WithdrawDeposit({
           {/* Approve DAO to spend Døllar */}
           <div style={{flexBasis: '33%', paddingTop: '2%'}}>
             <Button
+             style={{backgroundColor:templatestart(), border:'1px solid #F40036', color:'#F40036'}}
               wide
-              icon={<IconCirclePlus />}
+              icon={<IconCirclePlus style={{color:'#F40036'}}  />}
               label="Approve"
               onClick={() => {
                 approve(ESD.addr, ESDS.addr);
               }}
-              disabled={user === ''}
+              disabled={user === ''
+              
+            }
             />
           </div>
         </div>

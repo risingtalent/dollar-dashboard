@@ -10,12 +10,20 @@ type CouponMarketHeaderProps = {
   coupons: BigNumber,
   premium: BigNumber,
   redeemable: BigNumber,
+  theme: string
 };
 
-const CouponMarketHeader = ({
-  debt, supply, coupons, premium, redeemable
-}: CouponMarketHeaderProps) => (
-  <div style={{ padding: '2%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
+function CouponMarketHeader ({
+  debt, supply, coupons, premium, redeemable, theme
+}: CouponMarketHeaderProps) {
+
+  function templatestart(){
+    if (theme === 'light') return("#ffffff") ;
+
+    else return("#0C0C0C")  ;
+  }
+  return(
+  <div style={{ padding: '2%', display: 'flex', flexWrap: 'wrap', alignItems: 'center', borderRadius:'6px', backgroundColor:templatestart() }}>
     <div style={{ flexBasis: '20%' }}>
       <BalanceBlock asset="Debt Ratio" balance={ownership(debt, supply)} suffix={"%"}/>
     </div>
@@ -32,7 +40,8 @@ const CouponMarketHeader = ({
       <BalanceBlock asset="Redeemable" balance={redeemable}/>
     </div>
   </div>
-);
+)
+}
 
 
 export default CouponMarketHeader;

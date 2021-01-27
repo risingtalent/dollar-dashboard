@@ -14,6 +14,7 @@ import RegulationHeader from "./Header";
 import RegulationHistory from "./RegulationHistory";
 import IconHeader from "../common/IconHeader";
 import {getLegacyPoolAddress, getPoolAddress} from "../../utils/pool";
+import Icon1 from '../../icons/icon1'
 
 const ONE_COUPON = new BigNumber(10).pow(18);
 
@@ -104,7 +105,7 @@ function Regulation({ user, theme }: {user: string, theme:string}) {
   return (
     <>
     <div style={{ position:'absolute', top: '130px', right: '15%', left: '15%'}} >
-      <IconHeader theme={theme} icon={<i className="fas fa-chart-area"/>} text="Supply Regulation"/>
+      <IconHeader theme={theme} icon={<Icon1 />} text="Supply Regulation"/>
 
       <RegulationHeader
         theme={theme}

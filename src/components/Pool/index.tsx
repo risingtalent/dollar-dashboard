@@ -171,7 +171,7 @@ function Pool({ user, theme }: {user: string, theme: string}) {
     
     <>
         <div style={{ position:'absolute', top: '130px', right: '15%', left: '15%'}} >
-      <IconHeader theme={theme} icon={<i className="fas fa-parachute-box"/>} text="LP Reward Pool"/>
+      <IconHeader theme={theme} icon={<Icon1 />} text="LP Reward Pool"/>
 
       {/* {hasLegacyBalance ?
         <>

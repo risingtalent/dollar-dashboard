@@ -7,6 +7,7 @@ import {ESDS} from "../../constants/tokens";
 import AdvanceEpoch from './AdvanceEpoch';
 import EpochPageHeader from "./Header";
 import IconHeader from "../common/IconHeader";
+import Icon1 from '../../icons/icon1'
 
 function EpochDetail({ user, theme }: {user: string, theme:string}) {
 
@@ -36,12 +37,15 @@ function EpochDetail({ user, theme }: {user: string, theme:string}) {
     };
   }, [user]);
 
+  
+
   return (
     <>
      <div style={{ position:'absolute', top: '130px', right: '15%', left: '15%'}} >
-      <IconHeader icon={<i className="fas fa-stream"/>} text="Epoch"/>
+      <IconHeader theme={theme} icon={<Icon1 />} text="Epoch"/>
 
       <EpochPageHeader
+      theme={theme}
         epoch={epoch}
         epochTime={epochTime}
       />

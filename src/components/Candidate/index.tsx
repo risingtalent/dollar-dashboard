@@ -18,6 +18,7 @@ import CommitHeader from "./CommitHeader";
 import Commit from "./Commit";
 import IconHeader from "../common/IconHeader";
 import {proposalStatus} from "../../utils/gov";
+import Icon1 from '../../icons/icon1'
 
 function Candidate({ user, theme }: {user: string, theme:string}) {
   const { candidate } = useParams();
@@ -116,7 +117,7 @@ function Candidate({ user, theme }: {user: string, theme:string}) {
   return (
     <>
      <div style={{ position:'absolute', top: '130px', right: '15%', left: '15%'}} >
-      <IconHeader theme={theme} icon={<i className="fas fa-poll"/>} text="Candidate"/>
+      <IconHeader theme={theme} icon={<Icon1 />} text="Candidate"/>
       <IdentityBadge entity={candidate} shorten={false} />
 
       <VoteHeader

@@ -109,7 +109,7 @@ function Wallet({ user, theme }: {user: string, theme:string}) {
       <IconHeader theme={theme} icon={<Icon1 />} text="DAO"/>
 
       <AccountPageHeader
-      
+        theme={theme}
         accountESDBalance={userESDBalance}
         accountESDSBalance={userESDSBalance}
         totalESDSSupply={totalESDSSupply}

@@ -22,10 +22,17 @@ function status(accountStatus, unlocked) {
   return STATUS_MAP[accountStatus] + (accountStatus === 0 ? "" : " until " + unlocked)
 }
 
-const PoolPageHeader = ({
+function PoolPageHeader  ({
   accountUNIBalance, accountBondedBalance, accountRewardedESDBalance, accountClaimableESDBalance, poolTotalBonded, accountPoolStatus, unlocked, theme
-}: PoolPageHeaderProps) => (
-  <div style={{ padding: '2%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
+}: PoolPageHeaderProps) {
+
+  function templatestart(){
+    if (theme === 'light') return("#ffffff") ;
+
+    else return("#0C0C0C")  ;
+  }
+  return (
+    <div style={{ padding: '2%', display: 'flex', flexWrap: 'wrap', alignItems: 'center', backgroundColor:templatestart(),borderRadius:'6px', marginBottom:'19px' }}>
     <div style={{ flexBasis: '20%' }}>
       <BalanceBlock asset="Balance" balance={accountUNIBalance}  suffix={" UNI-V2"}/>
     </div>
@@ -42,7 +49,8 @@ const PoolPageHeader = ({
       <TextBlock label="Pool Status" text={status(accountPoolStatus, unlocked)}/>
     </div>
   </div>
-);
+  )
+}
 
 
 export default PoolPageHeader;

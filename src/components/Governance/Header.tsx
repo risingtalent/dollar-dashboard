@@ -10,15 +10,23 @@ type GovernanceHeaderProps = {
   stake: BigNumber,
   totalStake: BigNumber,
   accountStatus: number,
-  implementation: string
+  implementation: string,
+  theme: string
 };
 
 const STATUS_MAP = ["Frozen", "Fluid", "Locked"];
 
-const GovernanceHeader = ({
-  stake, totalStake, accountStatus, implementation
-}: GovernanceHeaderProps) => (
-  <div style={{ padding: '2%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
+function GovernanceHeader ({
+  stake, totalStake, accountStatus, implementation, theme
+}: GovernanceHeaderProps) {
+
+  function templatestart(){
+    if (theme === 'light') return("#ffffff") ;
+
+    else return("#0C0C0C")  ;
+  }
+  return(
+  <div style={{ padding: '2%', display: 'flex', flexWrap: 'wrap', alignItems: 'center', backgroundColor:templatestart(),borderRadius:'6px' }}>
     <div style={{ flexBasis: '25%' }}>
       <BalanceBlock asset="DAO Ownership" balance={ownership(stake, totalStake)} suffix="%" />
     </div>
@@ -33,6 +41,7 @@ const GovernanceHeader = ({
     </div>
   </div>
 );
+}
 
 
 export default GovernanceHeader;

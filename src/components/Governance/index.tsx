@@ -15,6 +15,7 @@ import ProposeCandidate from "./ProposeCandidate";
 import CandidateHistory from "./CandidateHistory";
 import IconHeader from "../common/IconHeader";
 import {canPropose} from "../../utils/gov";
+import Icon1 from '../../icons/icon1'
 
 function Governance({ user, theme }: {user: string, theme:string}) {
 
@@ -79,9 +80,10 @@ function Governance({ user, theme }: {user: string, theme:string}) {
   return (
     <>
        <div style={{ position:'absolute', top: '130px', right: '15%', left: '15%'}} >
-      <IconHeader theme={theme} icon={<i className="fas fa-poll"/>} text="Governance"/>
+      <IconHeader theme={theme} icon={<Icon1 />} text="Governance"/>
 
       <GovernanceHeader
+      theme={theme}
         stake={stake}
         totalStake={totalStake}
         accountStatus={userStatus}

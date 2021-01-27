@@ -8,6 +8,7 @@ import { toTokenUnitsBN } from '../../utils/number';
 import TradePageHeader from './Header';
 import {ESD, UNI, USDC} from "../../constants/tokens";
 import IconHeader from "../common/IconHeader";
+import Icon1 from '../../icons/icon1'
 
 
 function UniswapPool({ user, theme}: {user: string, theme:string}) {
@@ -44,10 +45,10 @@ function UniswapPool({ user, theme}: {user: string, theme:string}) {
   return (
     <>
     <div style={{ position:'absolute', top: '130px', right: '15%', left: '15%'}} >
-      <IconHeader theme={theme} icon={<i className="fas fa-exchange-alt"/>} text="Trade"/>
+      <IconHeader theme={theme} icon={<Icon1 />} text="Trade"/>
 
       <TradePageHeader
-
+        theme={theme}
         pairBalanceESD={pairBalanceESD}
         pairBalanceUSDC={pairBalanceUSDC}
         uniswapPair={UNI.addr}
