@@ -43,6 +43,7 @@ function BigNumberInput({ value, setter, adornment, disabled=false, theme }: Big
         }}
         disabled={disabled}
       />
+      
     </>
   );
 }

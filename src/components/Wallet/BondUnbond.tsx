@@ -53,7 +53,7 @@ function BondUnbond({
         {/* Bond Døllar within DAO */}
         <div style={{flexBasis: '33%', paddingTop: '2%'}}>
           <div style={{display: 'flex'}}>
-            <div style={{width: '60%', minWidth: '6em'}}>
+            <div style={{width: '60%', minWidth: '6em', position:'relative'}}>
               <>
                 <BigNumberInput
                   theme={theme}
@@ -61,6 +61,7 @@ function BondUnbond({
                   value={bondAmount}
                   setter={setBondAmount}
                 />
+                <div style={{display:'flex', position:"absolute", top:'12%', right:'2%'}}>DAY</div>
                 <MaxButton
                   onClick={() => {
                     setBondAmount(staged);
@@ -89,7 +90,7 @@ function BondUnbond({
         {/* Unbond Døllar within DAO */}
         <div style={{flexBasis: '33%', paddingTop: '2%'}}>
           <div style={{display: 'flex'}}>
-            <div style={{width: '60%', minWidth: '6em'}}>
+            <div style={{width: '60%', minWidth: '6em', position:'relative'}}>
               <>
                 <BigNumberInput
                   theme={theme}
@@ -97,6 +98,7 @@ function BondUnbond({
                   value={unbondAmount}
                   setter={setUnbondAmount}
                 />
+                <div style={{display:'flex', position:"absolute", top:'12%', right:'2%'}}>DAY</div>
                 <MaxButton
                   onClick={() => {
                     setUnbondAmount(bonded);

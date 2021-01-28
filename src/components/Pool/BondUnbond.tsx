@@ -32,7 +32,7 @@ function BondUnbond({
 
     else return("#0C0C0C")  ;
   }
-
+ 
   return (
     <>
     <h1 style={{paddingLeft:'24px', fontSize: '16px', height:'42px', backgroundColor: templatestart(), border:templatestart(), borderTopLeftRadius:'5px', borderTopRightRadius:'5px', display:'flex', alignItems:'flex-end', marginTop:'19px'}}>BOND</h1>
@@ -49,14 +49,16 @@ function BondUnbond({
         {/* Bond UNI-V2 within Pool */}
         <div style={{flexBasis: '33%', paddingTop: '2%'}}>
           <div style={{display: 'flex'}}>
-            <div style={{width: '60%', minWidth: '6em'}}>
+            <div style={{width: '60%', minWidth: '6em',position:'relative'}}>
               <>
+            
                 <BigNumberInput
-                  adornment="UNI-V2"
+                  
                   value={bondAmount}
                   setter={setBondAmount}
                   theme={theme}
                 />
+                <div style={{display:'flex', position:"absolute", top:'12%', right:'2%'}}>UNI-V2</div>
                 <MaxButton
                 
                   onClick={() => {
@@ -87,14 +89,15 @@ function BondUnbond({
         {/* Unbond UNI-V2 within Pool */}
         <div style={{flexBasis: '33%', paddingTop: '2%'}}>
           <div style={{display: 'flex'}}>
-            <div style={{width: '60%', minWidth: '6em'}}>
+            <div style={{width: '60%', minWidth: '6em', position:'relative'}}>
               <>
                 <BigNumberInput
                 theme={theme}
-                  adornment="UNI-V2"
+                 
                   value={unbondAmount}
                   setter={setUnbondAmount}
                 />
+                <div style={{display:'flex', position:"absolute", top:'12%', right:'2%'}}>UNI-V2</div>
                 <MaxButton
                   onClick={() => {
                     setUnbondAmount(bonded);

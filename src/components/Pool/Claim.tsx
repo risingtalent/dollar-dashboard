@@ -44,18 +44,21 @@ function Claim({
           <div style={{display: 'flex'}}>
             <div style={{width: '60%', minWidth: '6em'}}>
               <>
+              <div style={{position:'relative'}}>
                 <BigNumberInput
                 theme={theme}
-                  adornment=" DAY"
+                  
                   value={claimAmount}
                   setter={setClaimAmount}
                   disabled={status !== 0}
                 />
+                <div style={{display:'flex', position:"absolute", top:'12%', right:'2%'}}>DAY</div>
                 <MaxButton
                   onClick={() => {
                     setClaimAmount(claimable);
                   }}
                 />
+                </div>
               </>
             </div>
             <div style={{width: '40%', minWidth: '6em'}}>
