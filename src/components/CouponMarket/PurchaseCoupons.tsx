@@ -19,10 +19,11 @@ type PurchaseCouponsProps = {
   allowance: BigNumber,
   balance: BigNumber,
   debt: BigNumber,
+  theme: string
 };
 
 function PurchaseCoupons({
-  user, balance, allowance, debt,
+  user, balance, allowance, debt, theme
 }: PurchaseCouponsProps) {
   const [purchaseAmount, setPurchaseAmount] = useState(new BigNumber(0));
   const [premium, setPremium] = useState(new BigNumber(0));
@@ -38,8 +39,17 @@ function PurchaseCoupons({
     setPremium(premiumFormatted);
   };
 
+  
+  function templatestart(){
+    if (theme === 'light') return("#ffffff") ;
+
+    else return("#0C0C0C")  ;
+  }
+
   return (
-    <Box heading="Purchase">
+    <>
+    <h1 style={{paddingLeft:'24px', fontSize: '16px', height:'42px', backgroundColor: templatestart(), border:templatestart(), borderTopLeftRadius:'5px', borderTopRightRadius:'5px', display:'flex', alignItems:'flex-end'}}>STAGE</h1>
+    <Box style={{backgroundColor: templatestart(), border:templatestart()}}>
       {allowance.comparedTo(MAX_UINT256) === 0 ?
         <div style={{display: 'flex', flexWrap: 'wrap'}}>
           {/* User balance */}
@@ -71,6 +81,7 @@ function PurchaseCoupons({
               </div>
               <div style={{width: '40%', minWidth: '6em'}}>
                 <Button
+                
                   wide
                   icon={<IconCircleMinus/>}
                   label="Burn"
@@ -97,8 +108,9 @@ function PurchaseCoupons({
           {/* Approve DAO to spend Døllar */}
           <div style={{flexBasis: '30%', paddingTop: '2%'}}>
             <Button
+              style={{backgroundColor:templatestart(), border:'1px solid #F40036', color:'#F40036'}}
               wide
-              icon={<IconCirclePlus/>}
+              icon={<IconCirclePlus style={{color:'#F40036'}}/>}
               label="Approve"
               onClick={() => {
                 approve(ESD.addr, ESDS.addr);
@@ -109,6 +121,7 @@ function PurchaseCoupons({
         </div>
       }
     </Box>
+    </>
   );
 }
 

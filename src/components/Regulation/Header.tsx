@@ -49,7 +49,8 @@ const RegulationHeader = ({
     <>
       <div style={{display: 'flex', flexWrap: 'wrap'}}>
         <div style={{ flexBasis: '25%', marginRight: '2%' }}>
-          <Box heading="Supply Allocation" style={{ backgroundColor:templatestart(), border:templatestart()}}>
+        <h1 style={{paddingLeft:'24px', fontSize: '16px', height:'42px', backgroundColor: templatestart(), border:templatestart(), borderTopLeftRadius:'5px', borderTopRightRadius:'5px', display:'flex', alignItems:'flex-end'}}>SUPPLY ALLOCATION</h1>
+          <Box style={{ backgroundColor:templatestart(), border:templatestart()}}>
             <Distribution
               heading={`∅${formatMoney(totalSupply.toNumber())}`}
               items={[
@@ -61,7 +62,8 @@ const RegulationHeader = ({
           </Box>
         </div>
         <div style={{ flexBasis: '25%', marginRight: '2%' }}>
-          <Box heading="DAO Breakdown" style={{ backgroundColor:templatestart(), border:templatestart()}}>
+        <h1 style={{paddingLeft:'24px', fontSize: '16px', height:'42px', backgroundColor: templatestart(), border:templatestart(), borderTopLeftRadius:'5px', borderTopRightRadius:'5px', display:'flex', alignItems:'flex-end'}}>DAO BREAKDOWN</h1>
+          <Box style={{ backgroundColor:templatestart(), border:templatestart()}}>
             <Distribution
               heading={`∅${formatMoney(daoTotalSupply.toNumber())}`}
               items={[
@@ -73,7 +75,8 @@ const RegulationHeader = ({
           </Box>
         </div>
         <div style={{ flexBasis: '25%' }}>
-          <Box heading="Uniswap Breakdown" style={{ backgroundColor:templatestart(),border:templatestart()}}>
+        <h1 style={{paddingLeft:'24px', fontSize: '16px', height:'42px', backgroundColor: templatestart(), border:templatestart(), borderTopLeftRadius:'5px', borderTopRightRadius:'5px', display:'flex', alignItems:'flex-end'}}>UNISWAP BREAKDOWN</h1>
+          <Box style={{ backgroundColor:templatestart(),border:templatestart()}}>
             <Distribution
               heading={`∅${formatMoney(poolTotalSupply.toNumber())}`}
               items={[

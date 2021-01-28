@@ -134,6 +134,7 @@ function CouponMarket({ user, theme }: {user: string, theme:string}) {
       <Header primary="Purchase" />
 
       <PurchaseCoupons
+      theme={theme}
         user={user}
         allowance={allowance}
         balance={balance}

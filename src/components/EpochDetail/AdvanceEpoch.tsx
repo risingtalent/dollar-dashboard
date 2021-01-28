@@ -25,7 +25,9 @@ function AdvanceEpoch({
     else return("#0C0C0C")  ;
   }
   return (
-    <Box heading="Advance Epoch" style={{backgroundColor: templatestart(), border: templatestart()}} >
+    <>
+    <h1 style={{paddingLeft:'24px', fontSize: '16px', height:'42px', backgroundColor: templatestart(), border:templatestart(), borderTopLeftRadius:'5px', borderTopRightRadius:'5px', display:'flex', alignItems:'flex-end'}}>ADVANCE EPOCH</h1>
+    <Box style={{backgroundColor: templatestart(), border: templatestart()}} >
       <div style={{ display: 'flex' }}>
         {/* Epoch Time */}
         <div style={{ width: '30%' }}>
@@ -35,8 +37,9 @@ function AdvanceEpoch({
         <div style={{ width: '40%' }}/>
         <div style={{ width: '30%', paddingTop: '2%' }}>
           <Button
+          style={{backgroundColor:templatestart(), color:'#F40036', border:'1px solid #F40036'}}
             wide
-            icon={<IconCirclePlus />}
+            icon={<IconCirclePlus style={{color:'#F40036'}} />}
             label="Advance"
             onClick={() => {
               advance(ESDS.addr);
@@ -46,6 +49,7 @@ function AdvanceEpoch({
         </div>
       </div>
     </Box>
+    </>
   );
 }
 
