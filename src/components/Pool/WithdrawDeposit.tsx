@@ -50,6 +50,7 @@ function WithdrawDeposit({
               <div style={{width: '60%', minWidth: '6em'}}>
                 <>
                   <BigNumberInput
+                  theme={theme}
                     adornment="UNI-V2"
                     value={depositAmount}
                     setter={setDepositAmount}
@@ -64,8 +65,9 @@ function WithdrawDeposit({
               </div>
               <div style={{width: '40%', minWidth: '7em'}}>
                 <Button
+                style={{backgroundColor:templatestart(), border:'1px solid #F40036', color:'#F40036'}}
                   wide
-                  icon={status === 0 ? <IconCirclePlus/> : <IconLock/>}
+                  icon={status === 0 ? <IconCirclePlus style={{color:'#F40036'}}/> : <IconLock style={{color:'#F40036'}}/>}
                   label="Deposit"
                   onClick={() => {
                     depositPool(
@@ -86,6 +88,7 @@ function WithdrawDeposit({
               <div style={{width: '60%', minWidth: '6em'}}>
                 <>
                   <BigNumberInput
+                  theme={theme}
                     adornment="UNI-V2"
                     value={withdrawAmount}
                     setter={setWithdrawAmount}
@@ -100,9 +103,9 @@ function WithdrawDeposit({
               </div>
               <div style={{width: '40%', minWidth: '7em'}}>
                 <Button
-                
+                style={{backgroundColor:templatestart(), border:'1px solid #F40036', color:'#F40036'}}
                   wide
-                  icon={status === 0 ? <IconCircleMinus/> : <IconLock/>}
+                  icon={status === 0 ? <IconCircleMinus style={{color:'#F40036'}}/> : <IconLock style={{color:'#F40036'}}/>}
                   label="Withdraw"
                   onClick={() => {
                     withdrawPool(
