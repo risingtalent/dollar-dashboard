@@ -53,6 +53,7 @@ function PurchaseCoupons({
       {allowance.comparedTo(MAX_UINT256) === 0 ?
         <div style={{display: 'flex', flexWrap: 'wrap'}}>
           {/* User balance */}
+          
           <div style={{flexBasis: '30%'}}>
             <BalanceBlock asset={`Balance`} balance={balance} suffix={" DAY"}/>
           </div>
@@ -63,6 +64,7 @@ function PurchaseCoupons({
               <div style={{width: '60%', minWidth: '6em'}}>
                 <>
                   <BigNumberInput
+                  theme={theme}
                     adornment=" DAY"
                     value={purchaseAmount}
                     setter={(value) => {
