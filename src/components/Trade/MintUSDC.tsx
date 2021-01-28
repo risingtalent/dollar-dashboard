@@ -13,14 +13,20 @@ import BigNumberInput from "../common/BigNumberInput";
 type MintUSDCProps = {
   user: string,
   userBalanceUSDC: BigNumber,
+  theme: string
 }
 
 
 function MintUSDC({
-  user, userBalanceUSDC
+  user, userBalanceUSDC, theme
 }: MintUSDCProps) {
   const [mintAmount, setMintAmount] = useState(new BigNumber(0));
 
+  function templatestart(){
+    if (theme === 'light') return("#ffffff") ;
+
+    else return("#0C0C0C")  ;
+  }
   return (
     <Box heading="Mint">
       <div style={{ display: 'flex' }}>
@@ -34,6 +40,7 @@ function MintUSDC({
           <div style={{display: 'flex'}}>
             <div style={{width: '60%'}}>
               <BigNumberInput
+              theme={theme}
                 adornment="DAI"
                 value={mintAmount}
                 setter={setMintAmount}
@@ -41,8 +48,9 @@ function MintUSDC({
             </div>
             <div style={{width: '40%'}}>
               <Button
+              style={{backgroundColor:templatestart(), border:'1px solid #F40036', color:'#F40036'}}
                 wide
-                icon={<IconCirclePlus />}
+                icon={<IconCirclePlus style={{color:'#F40036'}} />}
                 label="Mint"
                 onClick={() => {
                   mintTestnetUSDC(toBaseUnitBN(mintAmount, USDC.decimals));

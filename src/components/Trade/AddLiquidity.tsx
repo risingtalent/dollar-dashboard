@@ -15,6 +15,7 @@ type AddliquidityProps = {
   pairBalanceESD: BigNumber,
   pairBalanceUSDC: BigNumber,
   pairTotalSupplyUNI: BigNumber,
+  theme: string
 }
 
 function AddLiquidity({
@@ -23,6 +24,7 @@ function AddLiquidity({
   pairBalanceESD,
   pairBalanceUSDC,
   pairTotalSupplyUNI,
+  theme
 }: AddliquidityProps) {
   const [amountUSDC, setAmountUSDC] = useState(new BigNumber(0));
   const [amountESD, setAmountESD] = useState(new BigNumber(0));
@@ -81,6 +83,12 @@ function AddLiquidity({
     setAmountUNI(newAmountUNI)
   };
 
+  function templatestart(){
+    if (theme === 'light') return("#ffffff") ;
+
+    else return("#0C0C0C")  ;
+  }
+
   return (
     <Box heading="Add Liquidity">
       <div style={{ display: 'flex' }}>
@@ -94,6 +102,7 @@ function AddLiquidity({
             <div style={{ width: '35%', marginRight: '5%' }}>
               <>
                 <BigNumberInput
+                theme={theme}
                   adornment=" DAY"
                   value={amountESD}
                   setter={onChangeAmountESD}
@@ -107,6 +116,7 @@ function AddLiquidity({
             </div>
             <div style={{ width: '35%', marginRight: '5%' }}>
               <BigNumberInput
+              theme={theme}
                 adornment="DAI"
                 value={amountUSDC}
                 setter={onChangeAmountUSDC}
@@ -115,8 +125,9 @@ function AddLiquidity({
             </div>
             <div style={{ width: '30%' }}>
               <Button
+              style={{backgroundColor:templatestart(), border:'1px solid #F40036', color:'#F40036'}}
                 wide
-                icon={<IconCirclePlus />}
+                icon={<IconCirclePlus style={{color:'#F40036'}}/>}
                 label="Add Liquidity"
                 onClick={() => {
                   const amountESDBU = toBaseUnitBN(amountESD, ESD.decimals);

@@ -16,6 +16,7 @@ type RemoveLiquidityProps = {
   pairBalanceESD: BigNumber,
   pairBalanceUSDC: BigNumber,
   pairTotalSupplyUNI: BigNumber,
+  theme: string
 }
 
 
@@ -24,6 +25,7 @@ function RemoveLiquidity({
   pairBalanceESD,
   pairBalanceUSDC,
   pairTotalSupplyUNI,
+  theme
 }: RemoveLiquidityProps) {
   const [withdrawAmountUNI, setWithdrawAmountUNI] = useState(new BigNumber(0));
 
@@ -43,6 +45,12 @@ function RemoveLiquidity({
     setWithdrawAmountUNI(amountUNIBN);
   };
 
+  function templatestart(){
+    if (theme === 'light') return("#ffffff") ;
+
+    else return("#0C0C0C")  ;
+  }
+
   return (
     <Box heading="Remove Liquidity">
       <div style={{ display: 'flex' }}>
@@ -55,6 +63,7 @@ function RemoveLiquidity({
           <div style={{ display: 'flex' }}>
             <div style={{ width: '35%', marginRight: '5%' }}>
               <BigNumberInput
+              theme={theme}
                 adornment="UNI-V2"
                 value={withdrawAmountUNI}
                 setter={onChangeWithdrawAmountUNI}
@@ -71,8 +80,9 @@ function RemoveLiquidity({
             </div>
             <div style={{ width: '30%' }}>
               <Button
+              style={{backgroundColor:templatestart(), border:'1px solid #F40036', color:'#F40036'}}
                 wide
-                icon={<IconCircleMinus />}
+                icon={<IconCircleMinus style={{color:'#F40036'}}/>}
                 label="Remove Liquidity"
                 onClick={() => {
                   removeLiquidity(

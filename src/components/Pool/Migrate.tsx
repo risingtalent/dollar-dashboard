@@ -17,14 +17,22 @@ type MigrateProps = {
   bonded: BigNumber,
   status: number,
   isRewardNegative: boolean,
+  theme:string
 };
 
 function Migrate({
-  legacyPoolAddress, staged, claimable, bonded, status, isRewardNegative
+  legacyPoolAddress, staged, claimable, bonded, status, isRewardNegative, theme
 }: MigrateProps) {
   const [unbonded, setUnbonded] = useState(false);
   const [withdrawn, setWithdrawn] = useState(false);
   const [claimed, setClaimed] = useState(false);
+
+  function templatestart(){
+    if (theme === 'light') return("#ffffff") ;
+
+    else return("#0C0C0C")  ;
+  }
+
 
   return (
     <Box heading="Migrate">
@@ -35,8 +43,9 @@ function Migrate({
             <div style={{width: '60%'}}>
               <BalanceBlock asset="Bonded" balance={bonded} suffix={"UNI-V2"} />
               <Button
+              style={{backgroundColor:templatestart(), border:'1px solid #F40036', color:'#F40036'}}
                 wide
-                icon={<IconCircleMinus/>}
+                icon={<IconCircleMinus style={{color:'#F40036'}}/>}
                 label="Unbond"
                 onClick={() => {
                   unbondPool(
@@ -56,8 +65,9 @@ function Migrate({
             <div style={{width: '60%'}}>
               <BalanceBlock asset="Staged" balance={staged} suffix={"UNI-V2"} />
               <Button
+              style={{backgroundColor:templatestart(), border:'1px solid #F40036', color:'#F40036'}}
                 wide
-                icon={<IconCircleMinus/>}
+                icon={<IconCircleMinus style={{color:'#F40036'}}/>}
                 label="Withdraw"
                 onClick={() => {
                   withdrawPool(
@@ -77,8 +87,9 @@ function Migrate({
             <div style={{width: '60%'}}>
               <BalanceBlock asset="Claimable" balance={claimable} suffix={" DAY"} />
               <Button
+              style={{backgroundColor:templatestart(), border:'1px solid #F40036', color:'#F40036'}}
                 wide
-                icon={<IconArrowDown/>}
+                icon={<IconArrowDown style={{color:'#F40036'}}/>}
                 label="Claim"
                 onClick={() => {
                   claimPool(

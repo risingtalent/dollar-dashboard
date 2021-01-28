@@ -18,11 +18,12 @@ import BigNumberInput from "../common/BigNumberInput";
 
 type UniswapBuySellProps = {
   userBalanceESD: BigNumber,
-  pairBalanceESD: BigNumber
+  pairBalanceESD: BigNumber,
+  theme:string
 };
 
 function UniswapBuySell({
-  userBalanceESD, pairBalanceESD
+  userBalanceESD, pairBalanceESD, theme
 }: UniswapBuySellProps) {
   const [buyAmount, setBuyAmount] = useState(new BigNumber(0));
   const [sellAmount, setSellAmount] = useState(new BigNumber(0));
@@ -52,6 +53,11 @@ function UniswapBuySell({
     const proceeds = await getProceeds(toBaseUnitBN(sellAmountBN, ESD.decimals));
     setProceeds(toTokenUnitsBN(new BigNumber(proceeds), USDC.decimals));
   };
+  function templatestart(){
+    if (theme === 'light') return("#ffffff") ;
+
+    else return("#0C0C0C")  ;
+  }
 
   return (
     <Box heading="Exchange">
@@ -66,6 +72,7 @@ function UniswapBuySell({
             <div style={{ width: '60%' }}>
               <>
                 <BigNumberInput
+                theme={theme}
                   adornment=" DAY"
                   value={buyAmount}
                   setter={(value) => {
@@ -77,8 +84,9 @@ function UniswapBuySell({
             </div>
             <div style={{ width: '40%' }}>
               <Button
+               style={{backgroundColor:templatestart(), border:'1px solid #F40036', color:'#F40036'}}
                 wide
-                icon={<IconCirclePlus />}
+                icon={<IconCirclePlus style={{color:'#F40036'}}/>}
                 label="Buy"
                 onClick={() => {
                   buyESD(
@@ -98,6 +106,7 @@ function UniswapBuySell({
             <div style={{ width: '60%' }}>
               <>
                 <BigNumberInput
+                theme={theme}
                   adornment=" DAY"
                   value={sellAmount}
                   setter={(value) => {
