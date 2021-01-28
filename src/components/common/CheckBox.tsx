@@ -11,8 +11,9 @@ type checkBoxProps = {
 function MyCheckBox({ text, checked, onCheck }: checkBoxProps) {
   const theme = useTheme();
   return (
-    <CheckBoxWrapper theme={theme}>
+    <CheckBoxWrapper theme={theme} style={{color:'#ffffff'}}>
       <Checkbox
+      
         checked={checked}
         onChange={onCheck}
       />

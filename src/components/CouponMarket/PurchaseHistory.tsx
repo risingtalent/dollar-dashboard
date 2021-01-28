@@ -62,6 +62,7 @@ function PurchaseHistory({
 
   return (
     <DataView
+    
       fields={['Epoch', 'Purchased', 'Principal', 'Premium', 'Expires', '']}
       status={ initialized ? 'default' : 'loading' }
       // @ts-ignore
@@ -75,7 +76,7 @@ function PurchaseHistory({
         formatBN(toTokenUnitsBN(epoch.principal, ESD.decimals), 2),
         formatBN(toTokenUnitsBN(epoch.premium, ESD.decimals), 2),
         epoch.expiration.toString(),
-        <CouponAction coupon={epoch} totalRedeemable={totalRedeemable} />
+        <CouponAction coupon={epoch} totalRedeemable={totalRedeemable}  />
       ]}
     />
   );
@@ -93,6 +94,7 @@ function CouponAction({coupon, totalRedeemable}:CouponActionProps) {
     {/* pre-EIP-16 style coupons */
      coupon.principal.isZero() && !coupon.premium.isZero() ?
       <Button
+      
         icon={<IconRefresh />}
         label="Migrate"
         onClick={() => migrateCoupons(ESDS.addr, coupon.epoch)}

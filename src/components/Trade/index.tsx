@@ -69,7 +69,7 @@ function UniswapPool({ user, theme}: {user: string, theme:string}) {
           <MainButton
           theme={theme}
             title="Trade"
-            description="Trade døllar tokens."
+            description="Trade DAY tokens."
             icon={<i className="fas fa-exchange-alt"/>}
             href={"https://uniswap.exchange/swap?inputCurrency=0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48&outputCurrency=0x36f3fd68e7325a35eb768f1aedaae9ea0689d723"}
           />

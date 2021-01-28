@@ -156,6 +156,7 @@ function CouponMarket({ user, theme }: {user: string, theme:string}) {
       </div>
 
       <PurchaseHistory
+      
         user={user}
         hideRedeemed={hideRedeemed}
         totalRedeemable={redeemable}

@@ -138,7 +138,7 @@ function HomePage({user, theme}: HomePageProps) {
         <MainButton
         theme={theme}
             title="Trade"
-            description="Trade døllar tokens."
+            description="Trade DAY tokens."
             icon={<Icon5 />}
             onClick={() => {
               history.push('/trade/');
