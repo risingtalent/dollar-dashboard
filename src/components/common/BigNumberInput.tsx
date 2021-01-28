@@ -10,7 +10,7 @@ type BigNumberInputProps = {
   setter: (value: BigNumber) => void
   adornment?: any,
   disabled?: boolean,
-  theme?:string
+  theme:string
 }
 
 function BigNumberInput({ value, setter, adornment, disabled=false, theme }: BigNumberInputProps) {

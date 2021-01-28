@@ -74,6 +74,7 @@ function Provide({
               <div style={{width: '60%', minWidth: '6em'}}>
                 <>
                   <BigNumberInput
+                  theme={theme}
                     adornment=" DAY"
                     value={provideAmount}
                     setter={onChangeAmountESD}
@@ -89,8 +90,9 @@ function Provide({
               </div>
               <div style={{width: '40%', minWidth: '6em'}}>
                 <Button
+                style={{backgroundColor:templatestart(), border:'1px solid #F40036', color:'#F40036'}}
                   wide
-                  icon={<IconArrowUp/>}
+                  icon={<IconArrowUp style={{color:'#F40036'}}/>}
                   label="Provide"
                   onClick={() => {
                     providePool(
