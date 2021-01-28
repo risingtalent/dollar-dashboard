@@ -55,7 +55,9 @@ function Provide({
   }
 
   return (
-    <Box heading="Provide" style={{ backgroundColor: templatestart(), border: templatestart()}}>
+    <>
+    <h1 style={{paddingLeft:'24px', fontSize: '16px', height:'42px', backgroundColor: templatestart(), border:templatestart(), borderTopLeftRadius:'5px', borderTopRightRadius:'5px', display:'flex', alignItems:'flex-end', marginTop:'19px'}}>PROVIDE</h1>
+    <Box  style={{ backgroundColor: templatestart(), border: templatestart()}}>
       {userUSDCAllowance.comparedTo(MAX_UINT256.dividedBy(2)) > 0 ?
         <div style={{display: 'flex', flexWrap: 'wrap'}}>
           {/* total rewarded */}
@@ -116,8 +118,9 @@ function Provide({
           {/* Approve Pool to spend USDC */}
           <div style={{flexBasis: '33%', paddingTop: '2%'}}>
             <Button
+            style={{backgroundColor:templatestart(), border:'1px solid #F40036', color:'#F40036'}}
               wide
-              icon={<IconCirclePlus/>}
+              icon={<IconCirclePlus style={{color:'#F40036'}}/>}
               label="Approve"
               onClick={() => {
                 approve(USDC.addr, poolAddress);
@@ -131,6 +134,7 @@ function Provide({
         <span style={{ opacity: 0.5 }}> Zap your rewards directly to LP by providing more DAI </span>
       </div>
     </Box>
+    </>
   );
 }
 

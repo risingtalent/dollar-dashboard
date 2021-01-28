@@ -38,7 +38,9 @@ function BondUnbond({
   }
 
   return (
-    <Box heading="Bond" style={{backgroundColor: templatestart(), border:templatestart()}}>
+    <>
+    <h1 style={{paddingLeft:'24px', fontSize: '16px', height:'42px', backgroundColor: templatestart(), border:templatestart(), borderTopLeftRadius:'5px', borderTopRightRadius:'5px', display:'flex', alignItems:'flex-end', marginTop:'19px'}}>BOND</h1>
+    <Box style={{backgroundColor: templatestart(), border:templatestart()}}>
       <div style={{display: 'flex', flexWrap: 'wrap'}}>
         {/* Total bonded */}
         <div style={{flexBasis: '16%'}}>
@@ -55,7 +57,7 @@ function BondUnbond({
               <>
                 <BigNumberInput
                   theme={theme}
-                  adornment=" DAY"
+                  adornment="DAY"
                   value={bondAmount}
                   setter={setBondAmount}
                 />
@@ -124,6 +126,7 @@ function BondUnbond({
         <span style={{ opacity: 0.5 }}> Bonding events will restart the lockup timer </span>
       </div>
     </Box>
+    </>
   );
 }
 

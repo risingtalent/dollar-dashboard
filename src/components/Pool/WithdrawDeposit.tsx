@@ -35,7 +35,9 @@ function WithdrawDeposit({
   }
 
   return (
-    <Box heading="Stage"  style={{ backgroundColor: templatestart(), border: templatestart()}}>
+    <>
+    <h1 style={{paddingLeft:'24px', fontSize: '16px', height:'42px', backgroundColor: templatestart(), border:templatestart(), borderTopLeftRadius:'5px', borderTopRightRadius:'5px', display:'flex', alignItems:'flex-end', marginTop:'19px'}}>STAGE</h1>
+    <Box style={{ backgroundColor: templatestart(), border: templatestart()}}>
       {allowance.comparedTo(MAX_UINT256) === 0 ?
         <div style={{display: 'flex', flexWrap: 'wrap'}}>
           {/* total Issued */}
@@ -98,6 +100,7 @@ function WithdrawDeposit({
               </div>
               <div style={{width: '40%', minWidth: '7em'}}>
                 <Button
+                
                   wide
                   icon={status === 0 ? <IconCircleMinus/> : <IconLock/>}
                   label="Withdraw"
@@ -124,8 +127,9 @@ function WithdrawDeposit({
           {/* Approve Pool to spend UNI-V2 */}
           <div style={{flexBasis: '33%', paddingTop: '2%'}}>
             <Button
+            style={{backgroundColor:templatestart(), border:'1px solid #F40036', color:'#F40036'}}
               wide
-              icon={<IconCirclePlus />}
+              icon={<IconCirclePlus style={{color:'#F40036'}}  />}
               label="Approve"
               onClick={() => {
                 approve(UNI.addr, poolAddress);
@@ -136,6 +140,7 @@ function WithdrawDeposit({
         </div>
       }
     </Box>
+    </>
   );
 }
 

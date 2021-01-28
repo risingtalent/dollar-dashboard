@@ -19,7 +19,7 @@ import ModalWarning from "./ModalWarning";
 import IconHeader from "../common/IconHeader";
 import {getPreference, storePreference} from "../../utils/storage";
 import {CheckBox} from "../common";
-import Icon1 from '../../icons/icon1'
+import Icon6 from '../../icons/icon6'
 
 const ONE_COUPON = new BigNumber(10).pow(18);
 
@@ -120,7 +120,7 @@ function CouponMarket({ user, theme }: {user: string, theme:string}) {
     <div style={{ position:'absolute', top: '130px', right: '15%', left: '15%'}} >
       <ModalWarning/>
 
-      <IconHeader theme={theme} icon={<Icon1 />} text="Coupon Market"/>
+      <IconHeader theme={theme} icon={<Icon6 />} text="Coupon Market"/>
 
       <CouponMarketHeader
       theme={theme}

@@ -34,7 +34,10 @@ function WithdrawDeposit({
   }
 
   return (
-    <Box heading="Stage" style={{backgroundColor: templatestart(), border:templatestart()}}>
+    <>
+  
+    <h1 style={{paddingLeft:'24px', fontSize: '16px', height:'42px', backgroundColor: templatestart(), border:templatestart(), borderTopLeftRadius:'5px', borderTopRightRadius:'5px', display:'flex', alignItems:'flex-end'}}>STAGE</h1>
+    <Box style={{backgroundColor: templatestart(), border:templatestart()}}>
       {allowance.comparedTo(MAX_UINT256) === 0 ?
         <div style={{display: 'flex', flexWrap: 'wrap'}}>
           {/* total Issued */}
@@ -139,6 +142,7 @@ function WithdrawDeposit({
         </div>
       }
     </Box>
+    </>
   );
 }
 

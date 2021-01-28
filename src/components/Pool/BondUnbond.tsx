@@ -20,7 +20,7 @@ type BondUnbondProps = {
   lockup: number,
   theme:string
 };
-
+ 
 function BondUnbond({
   poolAddress, staged, bonded, status, lockup, theme
 }: BondUnbondProps) {
@@ -34,7 +34,9 @@ function BondUnbond({
   }
 
   return (
-    <Box heading="Bond"  style={{ backgroundColor: templatestart(), border: templatestart()}}>
+    <>
+    <h1 style={{paddingLeft:'24px', fontSize: '16px', height:'42px', backgroundColor: templatestart(), border:templatestart(), borderTopLeftRadius:'5px', borderTopRightRadius:'5px', display:'flex', alignItems:'flex-end', marginTop:'19px'}}>BOND</h1>
+    <Box style={{ backgroundColor: templatestart(), border: templatestart()}}>
       <div style={{display: 'flex', flexWrap: 'wrap'}}>
         {/* Total bonded */}
         <div style={{flexBasis: '16%'}}>
@@ -53,8 +55,10 @@ function BondUnbond({
                   adornment="UNI-V2"
                   value={bondAmount}
                   setter={setBondAmount}
+                  theme={theme}
                 />
                 <MaxButton
+                
                   onClick={() => {
                     setBondAmount(staged);
                   }}
@@ -63,8 +67,9 @@ function BondUnbond({
             </div>
             <div style={{width: '40%', minWidth: '7em'}}>
               <Button
+               style={{backgroundColor:templatestart(), border:'1px solid #F40036', color:'#F40036'}}
                 wide
-                icon={status === 0 ? <IconCirclePlus/> : <IconCaution/>}
+                icon={status === 0 ? <IconCirclePlus style={{color:'#F40036'}}/> : <IconCaution style={{color:'#F40036'}}/>}
                 label="Bond"
                 onClick={() => {
                   bondPool(
@@ -85,6 +90,7 @@ function BondUnbond({
             <div style={{width: '60%', minWidth: '6em'}}>
               <>
                 <BigNumberInput
+                theme={theme}
                   adornment="UNI-V2"
                   value={unbondAmount}
                   setter={setUnbondAmount}
@@ -98,8 +104,9 @@ function BondUnbond({
             </div>
             <div style={{width: '40%', minWidth: '7em'}}>
               <Button
+               style={{backgroundColor:templatestart(), border:'1px solid #F40036', color:'#F40036'}}
                 wide
-                icon={status === 0 ? <IconCircleMinus/> : <IconCaution/>}
+                icon={status === 0 ? <IconCircleMinus style={{color:'#F40036'}}/> : <IconCaution style={{color:'#F40036'}}/>}
                 label="Unbond"
                 onClick={() => {
                   unbondPool(
@@ -118,6 +125,7 @@ function BondUnbond({
         <span style={{ opacity: 0.5 }}> Bonding events will restart the lockup timer </span>
       </div>
     </Box>
+    </>
   );
 }
 

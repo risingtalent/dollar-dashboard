@@ -30,7 +30,9 @@ function Claim({
   }
 
   return (
-    <Box heading="Claim"  style={{ backgroundColor: templatestart(), border: templatestart()}}>
+    <>
+    <h1 style={{paddingLeft:'24px', fontSize: '16px', height:'42px', backgroundColor: templatestart(), border:templatestart(), borderTopLeftRadius:'5px', borderTopRightRadius:'5px', display:'flex', alignItems:'flex-end', marginTop:'19px'}}>CLAIM</h1>
+    <Box  style={{ backgroundColor: templatestart(), border: templatestart()}}>
       <div style={{display: 'flex', flexWrap: 'wrap'}}>
         {/* total Issued */}
         <div style={{flexBasis: '32%'}}>
@@ -43,6 +45,7 @@ function Claim({
             <div style={{width: '60%', minWidth: '6em'}}>
               <>
                 <BigNumberInput
+                theme={theme}
                   adornment=" DAY"
                   value={claimAmount}
                   setter={setClaimAmount}
@@ -57,8 +60,9 @@ function Claim({
             </div>
             <div style={{width: '40%', minWidth: '6em'}}>
               <Button
+                style={{backgroundColor:templatestart(), border:'1px solid #F40036', color:'#F40036'}}
                 wide
-                icon={<IconArrowDown/>}
+                icon={<IconArrowDown style={{color:'#F40036'}}/>}
                 label="Claim"
                 onClick={() => {
                   claimPool(
@@ -77,6 +81,7 @@ function Claim({
         <span style={{ opacity: 0.5 }}> Unbond to make rewards claimable after your status is Unlocked </span>
       </div>
     </Box>
+    </>
   );
 }
 
