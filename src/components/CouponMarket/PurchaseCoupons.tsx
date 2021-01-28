@@ -81,9 +81,9 @@ function PurchaseCoupons({
               </div>
               <div style={{width: '40%', minWidth: '6em'}}>
                 <Button
-                
+                  style={{backgroundColor:templatestart(), color:'#F40036', border:'1px solid #F40036'}}
                   wide
-                  icon={<IconCircleMinus/>}
+                  icon={<IconCircleMinus style={{color:'#F40036'}}/>}
                   label="Burn"
                   onClick={() => {
                     purchaseCoupons(
