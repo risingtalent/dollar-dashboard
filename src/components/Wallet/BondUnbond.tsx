@@ -57,7 +57,7 @@ function BondUnbond({
               <>
                 <BigNumberInput
                   theme={theme}
-                  adornment="DAY"
+                
                   value={bondAmount}
                   setter={setBondAmount}
                 />
@@ -94,7 +94,7 @@ function BondUnbond({
               <>
                 <BigNumberInput
                   theme={theme}
-                  adornment=" DAY"
+                 
                   value={unbondAmount}
                   setter={setUnbondAmount}
                 />
