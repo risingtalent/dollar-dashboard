@@ -1,5 +1,5 @@
 export const UNI = {
-  addr: '0xd844e702dC69be3762C1019718DfB4dD3B6b3F6a',
+  addr: '0x9BfD25fC82E2b446c5e410c51cc57A271BdF0c6F',
   decimals: 18,
   symbol: 'UNI',
 };
@@ -11,13 +11,13 @@ export const USDC = {
 };
 
 export const ESD = {
-  addr: '0x38457271A11c981A3f3D69600DC22c6BfB51AFAa',
+  addr: '0x88AE89b6A88a73032956df27dafda6C281040A55',
   decimals: 18,
-  symbol: 'DSY',
+  symbol: 'DAY',
 };
 
 export const ESDS = {
-  addr: '0xbcD109ea37D29e3fab3A83a84916F74a28438a2D',
+  addr: '0x85FacE941d746c8f7B28Ef948216c6b1B2f61bf2',
   decimals: 18,
-  symbol: 'DSYS',
+  symbol: 'DAYS',
 };
